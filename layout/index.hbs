@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="UTF-8">
+
+<head>
+	<link rel="stylesheet" type="text/css" href="dist/style.css">
+	<script type="text/javascript" src="dist/bundle.js"></script>
+</head>
+
+<body>
+
+	{{> header }}
+
+	<div class="content">
+
+		<div class="wrapper">
+			<div class="base-column text-column">
+
+				<p>	{{ intro }} </p>
+				<div class="before-subtile"></div>
+
+				<h2> {{ part1title }} </h2>
+
+				{{#each part1paragraph}}
+					<p>{{value}}</p>
+				{{/each}}
+
+			</div>
+		</div>
+
+	</div>
+
+	<section id='scrolly-1-countries'>
+		<div class='scrolly'>
+			<!--  sticky graphic   -->
+			<figure class='sticky'>
+				<svg id="chart-1-countries"></svg>
+			</figure>
+
+			<!--  step text   -->
+			<article>
+
+				{{#each part1article}}
+					<div class='step' data-index={{data-index}} data-step={{data-step}}>
+						{{#if paragraph}}
+							<p>{{paragraph}}</p>
+						{{/if}}
+					</div>
+				{{/each}}
+
+			</article>
+		</div>
+	</section>
+
+	<div class="content">
+		<div class="wrapper">
+			<div class="base-column text-column">
+
+				{{#each part1outro}}
+					<p>{{value}}</p>
+				{{/each}}
+
+				<div class="before-subtile"></div>
+				<h2> {{ part2title }} </h2>
+
+				{{#each part2paragraph}}
+					<p>{{value}}</p>
+				{{/each}}
+
+			</div>
+		</div>
+	</div>
+
+	<section id='scrolly-2-people'>
+		<div class='scrolly'>
+			<!--  sticky graphic   -->
+			<figure class='sticky'>
+				<svg id="chart-2-people"></svg>
+			</figure>
+
+			<!--  step text   -->
+			<article>
+
+				{{#each part2article}}
+					<div class='step' data-index={{data-index}} data-step={{data-step}}>
+						{{#if paragraph}}
+							<p>{{paragraph}}</p>
+						{{/if}}
+					</div>
+				{{/each}}
+
+			</article>
+		</div>
+	</section>
+
+	<div class="content">
+		<div class="wrapper">
+			<div class="base-column text-column">
+
+				{{#each part2outro}}
+					<p>{{value}}</p>
+				{{/each}}
+
+			</div>
+		</div>
+	</div>
+
+</body>
+
+{{#> footer }}
+	Failover content
+{{/footer}}
+
+
+
+	<script src='src/libs/d3.min.js'></script>
+	<script src='src/libs/d3v4+jetpack.js'></script>
+	<script src='src/libs/stickyfill.min.js'></script>
+	<script src='src/libs/enter-view.min.js'></script>
+	<script src="https://d3js.org/d3-force.v1.min.js"></script>
+<!--
+	<script src='scripts/mapsUtils.js'></script>
+	<script src='scripts/forceUtils.js'></script>
+	<script src='scripts/step.js'></script>
+-->
+
+</html>
