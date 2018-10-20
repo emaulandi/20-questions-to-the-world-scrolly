@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Libre+Franklin);@import url(https://fonts.googleapis.com/css?family=Poppins);@import url(https://fonts.googleapis.com/css?family=Gaegu);/* chart style */
 svg {
-  background-color: yellow; }
+  /*background-color: yellow;*/ }
 
 .scrolly {
   max-width: 60rem;
