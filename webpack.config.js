@@ -7,7 +7,13 @@ module.exports = {
 
 	mode: 'development',
 
-	entry: './src/test.js',
+	entry: [
+		'./src/globalSteps.js',
+		'./src/countriesSteps.js',
+		'./src/mapsUtils.js',
+		'./src/forceUtils.js',
+		'./src/constants.js'
+	],
 
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -50,7 +56,11 @@ module.exports = {
                 name: 'img/[hash]-[name].[ext]'
             }
         }]
-			}
+			},
+			{
+				test: /\.json|geojson$/,
+				loader: 'json-loader'
+			},
     ]
   },
 
