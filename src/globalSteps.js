@@ -175,7 +175,7 @@ function initScroll() {
 			const index = +d3.select(el).attr('data-index');
 			console.log('MAP enter ' + d3.select(el).attr('data-index'));
 
-			//handleStepEnter(STEPcountries,d3.select(el).attr('data-step'));
+			handleStepEnter(STEPcountries,d3.select(el).attr('data-step'));
 
 		},
 		exit: el => {
