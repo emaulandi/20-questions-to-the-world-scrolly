@@ -1,18 +1,25 @@
 @import url(https://fonts.googleapis.com/css?family=Libre+Franklin);@import url(https://fonts.googleapis.com/css?family=Poppins);@import url(https://fonts.googleapis.com/css?family=Gaegu);/* chart style */
 svg {
-  /*background-color: yellow;*/ }
+  z-index: 1; }
+
+canvas {
+  position: absolute; }
 
 .scrolly {
   max-width: 60rem;
   margin: 3rem auto;
-  background-color: #f4f4f4;
+  /* background-color: #f4f4f4; */
   padding: 1rem; }
 
 .scrolly article {
   padding: 0;
   max-width: 30rem;
   margin: 0 auto;
-  position: relative; }
+  position: relative;
+  /* pointer-events: none; */ }
+
+.pointer-disabled {
+  pointer-events: none; }
 
 .scrolly article .step {
   min-height: 67vh;
@@ -44,7 +51,7 @@ svg {
   /* Graph position from the bottom */
   left: 0;
   border-style: solid;
-  border-width: 2px;
+  border-width: 4px;
   border-color: lightgray;
   display: flex;
   justify-content: center;
@@ -158,3 +165,15 @@ h2 {
   background: #ebebeb;
   width: 100%;
   height: auto; }
+
+/* tooltip style */
+.tooltip {
+  position: absolute;
+  pointer-events: none;
+  font-size: 12px;
+  min-width: 80px;
+  height: auto;
+  background: none repeat scroll 0 0 #ffffff;
+  border: 1px solid grey;
+  padding: 8px;
+  text-align: center; }
