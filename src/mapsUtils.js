@@ -1,5 +1,8 @@
 import * as d3 from "d3";
 
+import { countryColor, chartCountries, context } from './constants';
+import { showTipCountry, hideTipCountry }  from './countriesSteps';
+
 function drawMap(svg,data,path,colorFill) {
 
 	//console.log("Map Utils - Draw Map");
@@ -17,7 +20,44 @@ function drawMap(svg,data,path,colorFill) {
 				.attr("d", path)
 				.attr("stroke","white")
 				.attr('stroke-width', '1')
-				.attr("fill", colorFill);
+				.attr("fill", colorFill)
+				.on("mouseover", (d,i) => {
+
+					d3.select(d3.event.target)
+						.style("stroke-width",3);
+
+					showTipCountry(d);
+				})
+				.on("mouseout", (d,i) => {
+					d3.select(d3.event.target)
+						.style("stroke-width",1);
+
+					hideTipCountry();
+				});
+
+	//console.log("Map Utils - Draw Map - end");
+}
+
+function drawMapCanva(path,features){
+
+	//console.log("MapUtils - drawMapCanva");
+
+	//console.log("drawMapCanva - before geoGenerator");
+	let geoGenerator = path.context(context);
+
+	//console.log("Map Utils - drawMapCanva - features",features);
+
+	context.beginPath();
+	//geoGenerator({type: 'FeatureCollection', features: features})
+	context.fillStyle = countryColor;
+	context.lineWidth = '1';
+  context.strokeStyle = 'white';
+
+	geoGenerator({type: 'FeatureCollection', features: features});
+	context.fill();
+	context.stroke();
+
+	//console.log("drawMapCanva -end");
 }
 
 function getLargetPolygon(coordinatesArray){
@@ -91,5 +131,5 @@ function computeCenterFromPloygon(proj,polygon){
 
 
 
-export { drawMap, addVisitedCountriesCenter };
+export { drawMap, addVisitedCountriesCenter, drawMapCanva };
 //export default { drawMap, getLargetPolygon, computeCenterFromPloygon, addVisitedCountriesCenter, colorCountries, drawCountriesCenter, drawLine };

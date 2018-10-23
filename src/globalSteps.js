@@ -1,9 +1,9 @@
 // for watch and hot reload
 require('../index.html')
-import { drawMap, addVisitedCountriesCenter } from './mapsUtils';
-import { drawLineSteps, highlightCountriesStep, addNodesStep} from './countriesSteps';
-import { initializeSimulation, initializeForce, updateNetworkCountries, updateForce, forceXYbuilder } from './forceUtils';
-import { chartCountries, centerX, centerY, forceStrength }from './constants';
+import { drawMap, addVisitedCountriesCenter, drawMapCanva } from './mapsUtils';
+import { drawLineSteps, highlightCountriesStep, addNodesStep } from './countriesSteps';
+import { initializeSimulation, initializeForce, updateNetworkCountries, updateForce, forceXYbuilder, updateNetworkCountriesCanvas } from './forceUtils';
+import { chartCountries, centerX, centerY, forceStrength, countryColor, forceData } from './constants';
 
 import * as d3 from "d3";
 import Stickyfill from 'stickyfilljs';
@@ -46,15 +46,13 @@ let visitedCountries = [
 	{name:'Iran', id: 17, stepIndex: 2, people: 21},
 	{name:'Ethiopia', id: 18, stepIndex: 2, people: 24}
 ];
-const countryColor = 'Gainsboro';
+
 const countryHighlightColor = '#009cfc';
-
-
-
 
 /* Global variables */
 // Var for MAP
-let countriesData = null;
+let visitedCountriesFeatures = null;
+let otherCountriesFeatures = null;
 let visitedCountriesName = null;
 let proj = d3.geoMercator()
   .center([0, 20])
@@ -62,17 +60,14 @@ let proj = d3.geoMercator()
     .translate([centerX, chartCountries.svgProps.height/2]);
 let path = d3.geoPath().projection(proj);
 
-
 // Var for FORCE
 let simulation = d3.forceSimulation();
-let forceData ;
-
 
 // step render
 const STEPcountries = {
 	'begin': () => {
 		console.log("-----------------First country");
-		highlightCountriesStep(chartCountries, visitedCountries, 0, countryHighlightColor, forceData);
+		highlightCountriesStep(chartCountries, visitedCountries, 0, countryHighlightColor);
 	},
 	'showNodes': () => {
 		console.log("-----------------show nodes");
@@ -88,7 +83,7 @@ const STEPcountries = {
 		const stepIndex = 1;
 		const countriesStep = visitedCountries.filter( (d) => {return d.stepIndex == stepIndex;});
 
-		highlightCountriesStep(chartCountries, visitedCountries, stepIndex, countryHighlightColor, forceData);
+		highlightCountriesStep(chartCountries, visitedCountries, stepIndex, countryHighlightColor);
 		addNodesStep(simulation, chartCountries, countriesStep, stepIndex, forceData);
 	},
 	'climax': () => {
@@ -97,7 +92,7 @@ const STEPcountries = {
 		const stepIndex = 2;
 		const countriesStep = visitedCountries.filter( (d) => {return d.stepIndex == stepIndex;});
 
-		highlightCountriesStep(chartCountries, visitedCountries, stepIndex, countryHighlightColor, forceData);
+		highlightCountriesStep(chartCountries, visitedCountries, stepIndex, countryHighlightColor);
 		addNodesStep(simulation, chartCountries, countriesStep, stepIndex, forceData);
 	},
 	'gather':  () => {
@@ -115,6 +110,8 @@ const STEPcountries = {
 			simulation,
 			forceXYbuilder(centerX, chartCountries.svgProps.height*1.5, forceStrength)
 		);
+		// enable pointers on the map
+		d3.select("article").classed("pointer-disabled", true);
 	}
 };
 
@@ -126,8 +123,8 @@ function handleStepEnter(step){
 function svgSetUp(svgId,svgProps) {
 
 	let svg = d3.select(svgId)
-		.attr("width", svgProps.width + svgProps.margin.left + svgProps.margin.right)
-		.attr("height", svgProps.height + svgProps.margin.top + svgProps.margin.bottom)
+		.attr("width", svgProps.width /*+ svgProps.margin.left + svgProps.margin.right*/)
+		.attr("height", svgProps.height /*+ svgProps.margin.top + svgProps.margin.bottom*/)
 		.append("g")
 			.attr("transform", "translate(" + svgProps.margin.left + "," + svgProps.margin.top + ")");
 
@@ -137,7 +134,7 @@ function svgSetUp(svgId,svgProps) {
 
 function initScroll() {
 	console.log('init Scroll');
-	console.log('init Scroll - stepSel.nodes()', chartCountries.stepSel.nodes());
+	//console.log('init Scroll - stepSel.nodes()', chartCountries.stepSel.nodes());
 	Stickyfill.add(d3.select('.sticky').node());
 
 	enterView({
@@ -160,34 +157,47 @@ function initScroll() {
 }
 
 function initChart(){
+
 	svgSetUp(chartCountries.svgId, chartCountries.svgProps);
-	console.log("initChart - countriesData",countriesData);
-	drawMap(chartCountries.chartSel, countriesData, path, countryColor);
+
+	drawMap(chartCountries.chartSel, visitedCountriesFeatures, path, countryColor);
+
+	drawMapCanva(path,otherCountriesFeatures);
+
 }
 
 function loadData(){
 	console.log("loadData()");
+
+	visitedCountriesName = visitedCountries.map((d)=>{return d.name});
+
+	console.log("visitedCountriesName",visitedCountriesName);
+
 	return new Promise((resolve, reject) => {
 
 		//console.log(countriesDataImport.features);
-		countriesData = countriesDataImport.features;
-		//console.log("loadData() - countriesData - before id and sorting", countriesData);
+		let countriesDataTemp = countriesDataImport.features;
 
-		// add id to sort by visited countries ID
-		countriesData.forEach((d) => {
-			d.id = 100;
-			if (visitedCountries.filter((v) => v.name == d.properties.ADMIN).length > 0){
-				//console.log(d.properties.ADMIN);
-				d.id = visitedCountries.find((u) => u.name == d.properties.ADMIN).id
-			}
+		// select only the ones in visited countries
+		visitedCountriesFeatures = countriesDataTemp.filter( (d) => {
+			return visitedCountriesName.includes(d.properties.ADMIN);
+		});
+
+		//add ID from visitedCountry and sort them to appear in the right order
+		visitedCountriesFeatures.forEach( (c) => {
+			c.id = visitedCountries.find((u) => u.name == c.properties.ADMIN).id ;
+			c.name =  c.properties.ADMIN ;
+			c.people =  visitedCountries.find((u) => u.name == c.properties.ADMIN).people ;
 		})
-		countriesData.sort((a,b) => a.id - b.id);
-		//console.log("loadData() - countriesData - after id and sorting", countriesData);
+		visitedCountriesFeatures.sort((a,b) => a.id - b.id);
 
-		//console.log("loadData() - visitedCountries - before add center", visitedCountries);
+		otherCountriesFeatures = countriesDataTemp.filter( (d) => {
+			return !visitedCountriesName.includes(d.properties.ADMIN);
+		});
+
 
 		// compute center of a country and add it to the object @ mapsUtils
-		addVisitedCountriesCenter(proj,countriesData,visitedCountries);
+		addVisitedCountriesCenter(proj,visitedCountriesFeatures,visitedCountries);
 		console.log("loadData() - visitedCountries", visitedCountries);
 
 	//	console.log("loadData() end before resolve");
@@ -199,10 +209,11 @@ function loadData(){
 function initForce(){
 	console.log("intiForce");
 
-	forceData = [];
+	//initializeSimulation(simulation, forceData, updateNetworkCountries);
+	initializeSimulation(simulation, forceData, updateNetworkCountriesCanvas);
 
-	initializeSimulation(simulation, forceData, updateNetworkCountries);
-
+	// do not append nodes if using Canvas
+	/*
 	chartCountries.chartSel
 		.append("g")
 		.attr("class","nodesItems")
@@ -215,6 +226,7 @@ function initForce(){
 					.style("stroke","white")
 					.style("stroke-width",1)
 					.style("fill",nodesColor);
+	*/
 }
 
 function init(){
@@ -222,8 +234,6 @@ function init(){
 	console.log("init");
 
 	loadData().then(() => {
-		console.log("countriesData",countriesData);
-		//console.log("visitedCountriesName",visitedCountriesName);
 
 		initScroll();
 		initChart();

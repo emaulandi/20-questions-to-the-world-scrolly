@@ -2,7 +2,7 @@
 /* FORCE FUNCTION */
 /* ---------------------- */
 import * as d3 from "d3";
-import { radius,  nodePadding, forcePropsCluster, alpha, nodesColor, chartCountries} from './constants';
+import { radius,  nodePadding, forcePropsCluster, alpha, nodesColor, chartCountries, contextForce, forceData} from './constants';
 
 function forceXYbuilder(x,y, forceStrength){
   return {
@@ -50,6 +50,22 @@ function updateForce(simulation, forceProps){
 	simulation.alpha(alpha).restart();
 }
 
+function updateNetworkCountriesCanvas(){
+  contextForce.clearRect(0, 0, chartCountries.svgProps.width, chartCountries.svgProps.height);
+	contextForce.save();
+	forceData.forEach(drawNodeCanvas);
+	contextForce.restore();
+}
+
+function drawNodeCanvas(d) {
+
+		contextForce.beginPath();
+		contextForce.moveTo(d.x + radius, d.y);
+		contextForce.arc(d.x, d.y, radius, 0, 2 * Math.PI);
+		contextForce.fillStyle = nodesColor;
+		contextForce.fill();
+}
+
 function updateNetworkCountries(){
 	chartCountries.chartSel.selectAll(".nodes")
 		.attr("cx", d => d.x)
@@ -69,6 +85,15 @@ function addNodeArrayToSim(simulation, nodeArray, forceData, chartSel){
 
   //console.log(forceData);
 	restartForce(simulation, chartSel, forceData);
+}
+
+function addNodeArrayToSimCanvas(simulation, nodeArray, forceData, chartSel){
+  nodeArray.forEach((node) => {
+    forceData.push(node);
+  });
+
+  //console.log(forceData);
+	restartForceCanvas(simulation, chartSel, forceData);
 }
 
 function cleanNodes(chartSel, forceData){
@@ -97,4 +122,13 @@ function restartForce(simulation, chartSel, forceData){
   simulation.alpha(alpha).restart();
 }
 
-export { forceXYbuilder, initializeSimulation, initializeForce, updateForce, updateNetworkCountries, updateNetworkPeople, addNodeArrayToSim, cleanNodes, restartForce };
+function restartForceCanvas(simulation, chartSel, forceData){
+
+  simulation.nodes(forceData);
+
+  updateNetworkCountriesCanvas();
+
+  simulation.alpha(alpha).restart();
+}
+
+export { forceXYbuilder, initializeSimulation, initializeForce, updateForce, updateNetworkCountries, updateNetworkPeople, addNodeArrayToSim, addNodeArrayToSimCanvas, cleanNodes, restartForce, updateNetworkCountriesCanvas };

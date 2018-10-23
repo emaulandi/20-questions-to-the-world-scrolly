@@ -1,6 +1,8 @@
 import * as d3 from "d3";
-import { chartCountries, standardDuration, drawLineDelay, colorCountriesPause, colorCenterPause, dotVisitedColor, centerX, centerY, forceDuration } from './constants';
-import { addNodeArrayToSim } from './forceUtils';
+import { chartCountries, context, lineColor, standardDuration, drawLineDelay, colorCountriesPause, colorCenterPause, dotVisitedColor, centerX, centerY, forceDuration, tooltipCountries } from './constants';
+import { addNodeArrayToSim, addNodeArrayToSimCanvas } from './forceUtils';
+
+
 
 function drawLineSteps(chartCountries, visitedCountries, countriesStep, stepIndex){
 	// There is a start of dot at the begining of the step, why ?
@@ -18,7 +20,8 @@ function drawLineSteps(chartCountries, visitedCountries, countriesStep, stepInde
 			if(i <= centerCountriesVisited.length - 2){
 				// draw a line between 2 points, given an array of coordinates @ mapsUtils.js
 				//console.log(centerCountriesVisited.slice(i,i+2));
-				drawLine(chartCountries.chartSel,centerCountriesVisited.slice(i,i+2),i);
+				drawLine(chartCountries.chartSel, centerCountriesVisited.slice(i,i+2), i);
+				//drawLineCanva(context, centerCountriesVisited.slice(i,i+2), i);
 			}
 		})
 	}
@@ -89,6 +92,50 @@ function drawCountriesCenter(svg,dataCenterCoordinates,fillColor, fillColorConto
 }
 
 // draw a line between 2 points, given an array of coordinates
+function drawLineCanva(context, arrayCoordinates, idelay){
+
+	console.log("countriesSteps - drawLineCanva - enter");
+
+	const line = {
+		x1: arrayCoordinates[0][0],
+		y1: arrayCoordinates[0][1],
+		x2: arrayCoordinates[1][0],
+		y2: arrayCoordinates[1][1]
+	}
+
+	let i1 = d3.interpolateNumber(line.x1, line.x2);
+	let i2 = d3.interpolateNumber(line.y1, line.y2);
+
+
+	d3.transition()
+		.delay(drawLineDelay*idelay)
+		.duration(2*standardDuration+200)
+		.tween("", function() {
+
+	      return function(t) {
+
+					//console.log("x1",line.x1);
+
+					//console.log("i1(t)",i1(t));
+					//console.log("i2(t)",i2(t));
+
+
+					context.beginPath();
+					context.lineWidth = 3;
+					//context.setLineDash([5, 5]);
+				  context.strokeStyle = lineColor;
+					context.moveTo(line.x1,line.y1);
+					//to improve ? I gues this is drawing multiple line on top of each other. But Canvas handle well a lot of element so ...
+					context.lineTo(i1(t),i2(t));
+					//context.lineTo(line.x2,line.y2); // draw at once
+					context.stroke();
+
+				}
+		});
+
+
+}
+// draw a line between 2 points, given an array of coordinates
 function drawLine(svg,arrayCoordinates,idelay){
 
 	//console.log("countriesSteps - drawLine - arrayCoordinates",arrayCoordinates);
@@ -105,7 +152,7 @@ function drawLine(svg,arrayCoordinates,idelay){
 		.attr("y1", y1)
 		.attr("x2", x1)
 		.attr("y2", y1)
-		.attr("stroke", "#80ceff")
+		.attr("stroke", lineColor)
 		.attr("stroke-width", 3)
 		.attr("stroke-linecap", "round")
 		.attr("stroke-dasharray", "5,5")
@@ -125,7 +172,7 @@ function drawLine(svg,arrayCoordinates,idelay){
 			*/
 }
 
-function highlightCountriesStep(chartCountries, visitedCountries, stepIndex, countryHighlightColor, forceData){
+function highlightCountriesStep(chartCountries, visitedCountries, stepIndex, countryHighlightColor){
 
 		console.log("countriesStep - highlightCountriesStep - step : ",stepIndex);
 		//console.log("visitedCountries",visitedCountries);
@@ -187,10 +234,39 @@ function addNodesStep(simulation, chartCountries, countriesStep, stepIndex, forc
 	const delay = forceDuration;
 	nodesArray.forEach((d) => {
 		setTimeout(function() {
-	    addNodeArrayToSim(simulation, d, forceData, chartCountries.chartSel);
+	    //addNodeArrayToSim(simulation, d, forceData, chartCountries.chartSel);
+			addNodeArrayToSimCanvas(simulation, d, forceData, chartCountries.chartSel);
 		}, delay + offset)
 		offset += delay;
 	});
 }
 
-export { drawLineSteps, highlightCountriesStep, addNodesStep};
+function showTipCountry(d) {
+
+	tooltipCountries.html(printCountry(d))
+		// On utilise style pour définir l'endroit d'affichage
+		.style("left", (d3.event.pageX + 10) + "px")
+		.style("top", (d3.event.pageY - 20) + "px");
+
+	tooltipCountries.transition()
+   		.duration(500)
+   		.style("opacity", .9);
+}
+
+function hideTipCountry() {
+	tooltipCountries.transition()
+		.duration(500)
+		.style("opacity", 0);
+}
+
+function printCountry(v) {
+	return "<h4>" + v.name + "</h4> " + "<br/>" + "<b>" + v.people + "</b> people interviewed";
+	/*
+		+ "<br/>" + "<b>#" + v.rank + "</b> on overall ranking"
+		+ "<br/> | tech #" + v.tech_rank + " | leadership #" + v.leadership_rank + " | "
+		+ "<br/><br/>" + v.total_employees + " employees"
+		+ "<br/><br/>" + v.sector + " | " + v.customer_base;
+	*/
+}
+
+export { drawLineSteps, highlightCountriesStep, addNodesStep, showTipCountry, hideTipCountry };

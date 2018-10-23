@@ -1,21 +1,30 @@
 /* chart style */
 
 svg {
-	/*background-color: yellow;*/
+  z-index: 1;
+}
+
+canvas {
+  position : absolute;
 }
 
 .scrolly {
   max-width: 60rem;
   margin: 3rem auto;
-  background-color: #f4f4f4;
+  /* background-color: #f4f4f4; */
   padding: 1rem;
 }
 
- .scrolly article {
+.scrolly article {
   padding: 0;
   max-width: 30rem;
   margin: 0 auto;
   position: relative;
+  /* pointer-events: none; */
+}
+
+.pointer-disabled {
+  pointer-events: none;
 }
 
 .scrolly article .step {
@@ -51,8 +60,8 @@ svg {
   left: 0;
 
 	border-style: solid;
-	border-width: 2px;
-	border-color: lightgray;
+	border-width: 4px;
+  border-color: lightgray;
 
 	display:flex;
 	justify-content:center;
