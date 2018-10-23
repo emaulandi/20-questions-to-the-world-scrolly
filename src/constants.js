@@ -10,6 +10,17 @@ const chartCountries = {
 	svgProps: {
 		width: 960,
 		height: 600,
+		margin: { top: 0, bottom: 0, left: 0, right: 0}
+	}
+}
+
+const chartPeople = {
+	stepSel: d3.select('#scrolly-2-people').selectAll('.step'),
+	svgId: "#chart-2-people",
+	chartSel: d3.select("#chart-2-people"),
+	svgProps: {
+		width: 940,
+		height: 580,
 		margin: { top: 10, bottom: 10, left: 10, right: 10}
 	}
 }
@@ -55,9 +66,10 @@ const forcePropsCluster = {
 	}
 };
 const alpha = 0.1;
+const alphaPeople = 0.2;
 const nodesColor = "#595959";
 
-let forceData = [];
+let forceDataCountries = [];
 
 /// TOOLTIP ///
 // Add a div that will go wherever in the body
@@ -65,8 +77,19 @@ var tooltipCountries = d3.select("body").append("div")
 	.attr("class", "tooltip");
 tooltipCountries.style("opacity", 0);
 
+
+/// PEOPLE CHART ///
+const genderCategory = ["F","M"];
+const ageCategory = ['0-15', '15-25', '25-35', '35-50', '50-65','65+'];
+const occupationCategory = ['Student', 'Executive', 'Liberal profession and intellectual occupation', 'Religious', 'Retiree',
+  'Artist', 'Teacher', 'Employee', 'Not paid occupation', 'Worker', 'Craftsmen, merchants & small business owner',
+  'Farmer', 'Kid'];
+
+const yNodes = 150 ;
+
 export {
   chartCountries,
+	chartPeople,
 	canvas,
 	context,
 	contextForce,
@@ -85,7 +108,12 @@ export {
   centerY,
   forcePropsCluster,
   alpha,
+	alphaPeople,
   nodesColor,
-	forceData,
-	tooltipCountries
+	forceDataCountries,
+	tooltipCountries,
+	genderCategory,
+	ageCategory,
+	occupationCategory,
+	yNodes
 };

@@ -2,7 +2,7 @@
 /* FORCE FUNCTION */
 /* ---------------------- */
 import * as d3 from "d3";
-import { radius,  nodePadding, forcePropsCluster, alpha, nodesColor, chartCountries, contextForce, forceData} from './constants';
+import { radius,  nodePadding, forcePropsCluster, alpha, nodesColor, chartCountries, contextForce, forceDataCountries, chartPeople} from './constants';
 
 function forceXYbuilder(x,y, forceStrength){
   return {
@@ -32,6 +32,7 @@ function initializeForce(simulation){
 		.force("y", d3.forceY())
 		.force("collision", d3.forceCollide(radius + nodePadding));
 
+  // set the force to cluster (node go to centerX, centerY in their properties)
 	updateForce(simulation, forcePropsCluster);
 }
 
@@ -53,7 +54,7 @@ function updateForce(simulation, forceProps){
 function updateNetworkCountriesCanvas(){
   contextForce.clearRect(0, 0, chartCountries.svgProps.width, chartCountries.svgProps.height);
 	contextForce.save();
-	forceData.forEach(drawNodeCanvas);
+	forceDataCountries.forEach(drawNodeCanvas);
 	contextForce.restore();
 }
 
@@ -66,6 +67,7 @@ function drawNodeCanvas(d) {
 		contextForce.fill();
 }
 
+// used only if force on SVG
 function updateNetworkCountries(){
 	chartCountries.chartSel.selectAll(".nodes")
 		.attr("cx", d => d.x)
@@ -96,6 +98,8 @@ function addNodeArrayToSimCanvas(simulation, nodeArray, forceData, chartSel){
 	restartForceCanvas(simulation, chartSel, forceData);
 }
 
+/*
+// Check if not used -> delete
 function cleanNodes(chartSel, forceData){
   console.log("Clean nodes");
 
@@ -105,6 +109,7 @@ function cleanNodes(chartSel, forceData){
     .exit()
     .remove();
 }
+*/
 // restart when adding new nodes
 function restartForce(simulation, chartSel, forceData){
   chartSel
@@ -131,4 +136,5 @@ function restartForceCanvas(simulation, chartSel, forceData){
   simulation.alpha(alpha).restart();
 }
 
-export { forceXYbuilder, initializeSimulation, initializeForce, updateForce, updateNetworkCountries, updateNetworkPeople, addNodeArrayToSim, addNodeArrayToSimCanvas, cleanNodes, restartForce, updateNetworkCountriesCanvas };
+//clear here what is not needed to export
+export { forceXYbuilder, initializeSimulation, initializeForce, updateForce, updateNetworkCountries, updateNetworkPeople, addNodeArrayToSim, addNodeArrayToSimCanvas, restartForce, updateNetworkCountriesCanvas };

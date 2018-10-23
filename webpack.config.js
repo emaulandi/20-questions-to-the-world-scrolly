@@ -12,7 +12,8 @@ module.exports = {
 		'./src/countriesSteps.js',
 		'./src/mapsUtils.js',
 		'./src/forceUtils.js',
-		'./src/constants.js'
+		'./src/constants.js',
+		'./src/people-steps.js'
 	],
 
 	output: {
@@ -61,6 +62,15 @@ module.exports = {
 				test: /\.json|geojson$/,
 				loader: 'json-loader'
 			},
+			{
+        test: /\.csv$/,
+        loader: 'csv-loader',
+        options: {
+          dynamicTyping: true,
+          header: true,
+          skipEmptyLines: true
+        }
+      }
     ]
   },
 
