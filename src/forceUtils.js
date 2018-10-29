@@ -4,6 +4,11 @@
 import * as d3 from "d3";
 import { radius,  nodePadding, forcePropsCluster, alpha, nodesColor, chartCountries, contextForce, forceDataCountries, chartPeople} from './constants';
 
+let forceCollide = d3.forceCollide()
+  .strength(.8)
+  .radius((d) => { return d.r + nodePadding; })
+  .iterations(5);
+
 function forceXYbuilder(x,y, forceStrength){
   return {
   	forceX:{
@@ -17,11 +22,18 @@ function forceXYbuilder(x,y, forceStrength){
   }
 }
 
-function initializeSimulation(simulation, forceData, updateNetwork){
+function initializeSimulation(type, simulation, forceData, updateNetwork){
   console.log("forceUtils - initializeSimulation");
   //console.log("forceUtils - initializeSimulation - forceData : ", forceData);
 	simulation.nodes(forceData);
-	initializeForce(simulation);
+
+  if (type == "countries"){
+    initializeForce(simulation);
+  }
+  else {
+    initializeForcePeople(simulation);
+  }
+
 	simulation.on("tick", updateNetwork);
 }
 
@@ -31,6 +43,18 @@ function initializeForce(simulation){
 		.force("x", d3.forceX())
 		.force("y", d3.forceY())
 		.force("collision", d3.forceCollide(radius + nodePadding));
+
+  // set the force to cluster (node go to centerX, centerY in their properties)
+	updateForce(simulation, forcePropsCluster);
+}
+
+function initializeForcePeople(simulation){
+  //console.log("forceUtils - initializeForce");
+
+	simulation
+		.force("x", d3.forceX())
+		.force("y", d3.forceY())
+		.force("collision", forceCollide);
 
   // set the force to cluster (node go to centerX, centerY in their properties)
 	updateForce(simulation, forcePropsCluster);
@@ -112,6 +136,9 @@ function cleanNodes(chartSel, forceData){
 */
 // restart when adding new nodes
 function restartForce(simulation, chartSel, forceData){
+
+  console.log("forceUtils - restartForce");
+
   chartSel
 		.selectAll(".nodes")
         .data(forceData)
@@ -127,6 +154,12 @@ function restartForce(simulation, chartSel, forceData){
   simulation.alpha(alpha).restart();
 }
 
+function restartCollide(simulation, alpha) {
+  console.log("forceUtils - simpleRestart");
+
+  forceCollide.initialize(simulation.nodes());
+}
+
 function restartForceCanvas(simulation, chartSel, forceData){
 
   simulation.nodes(forceData);
@@ -137,4 +170,17 @@ function restartForceCanvas(simulation, chartSel, forceData){
 }
 
 //clear here what is not needed to export
-export { forceXYbuilder, initializeSimulation, initializeForce, updateForce, updateNetworkCountries, updateNetworkPeople, addNodeArrayToSim, addNodeArrayToSimCanvas, restartForce, updateNetworkCountriesCanvas };
+export {
+  forceXYbuilder,
+  initializeSimulation,
+  initializeForcePeople,
+  initializeForce,
+  updateForce,
+  updateNetworkCountries,
+  updateNetworkPeople,
+  addNodeArrayToSim,
+  addNodeArrayToSimCanvas,
+  restartForce,
+  updateNetworkCountriesCanvas,
+  restartCollide
+};

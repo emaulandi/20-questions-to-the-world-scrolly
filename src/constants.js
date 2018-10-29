@@ -8,7 +8,7 @@ const chartCountries = {
 	svgId: "#chart-1-countries",
 	chartSel: d3.select("#chart-1-countries"),
 	svgProps: {
-		width: 960,
+		width: 850,
 		height: 600,
 		margin: { top: 0, bottom: 0, left: 0, right: 0}
 	}
@@ -19,9 +19,9 @@ const chartPeople = {
 	svgId: "#chart-2-people",
 	chartSel: d3.select("#chart-2-people"),
 	svgProps: {
-		width: 940,
-		height: 580,
-		margin: { top: 10, bottom: 10, left: 10, right: 10}
+		width: 960,
+		height: 600,
+		margin: { top: 0, bottom: 0, left: 0, right: 0}
 	}
 }
 
@@ -38,6 +38,8 @@ let canvasForce = d3.select('#canva-1-force')
 	.attr("height", chartCountries.svgProps.height /*+ chartCountries.svgProps.margin.top + chartCountries.svgProps.margin.bottom*/)
 
 let contextForce = canvasForce.node().getContext('2d');
+
+let simulationPeople = d3.forceSimulation();
 
 const countryColor = 'Gainsboro';
 
@@ -79,13 +81,21 @@ tooltipCountries.style("opacity", 0);
 
 
 /// PEOPLE CHART ///
-const genderCategory = ["F","M"];
-const ageCategory = ['0-15', '15-25', '25-35', '35-50', '50-65','65+'];
-const occupationCategory = ['Student', 'Executive', 'Liberal profession and intellectual occupation', 'Religious', 'Retiree',
-  'Artist', 'Teacher', 'Employee', 'Not paid occupation', 'Worker', 'Craftsmen, merchants & small business owner',
-  'Farmer', 'Kid'];
+const categoriesAttribute = ["Gender", "AgeCategory", "NumberKidsCategory","populationCategory", "Occupation type"];
+const categoriesList = [
+  {name: "genderCategory", text: "Gender", sorting : "key", array: ["F","M"]},
+  {name: "ageCategory",  text: "Age", sorting : "key", array: ['0-15', '15-25', '25-35', '35-50', '50-65','65+']},
+  {name: "kidsCategory",  text: "Number of kids", sorting : "key", array: ['0', '1', '2-5', '5+']},
+  {name: "populationCategory",  text: "City Population", sorting : "key", array: ['0-5k', '5-15k', '15-100k','100k-1M', '1M-5M', '5M+']},
+  {name: "occupationCategory",  text: "Occupation", sorting : "value", array: ['Student', 'Executive', 'Liberal profession and intellectual occupation', 'Religious', 'Retiree',
+    'Artist', 'Teacher', 'Employee', 'Not paid occupation', 'Worker', 'Craftsmen, merchants & small business owner',
+    'Farmer', 'Kid']},
+];
 
-const yNodes = 150 ;
+const topBuffer = 400;
+const yNodes = topBuffer/2 ;
+
+
 
 export {
   chartCountries,
@@ -93,6 +103,7 @@ export {
 	canvas,
 	context,
 	contextForce,
+	simulationPeople,
 	countryColor,
   standardDuration,
   forceDuration,
@@ -112,8 +123,8 @@ export {
   nodesColor,
 	forceDataCountries,
 	tooltipCountries,
-	genderCategory,
-	ageCategory,
-	occupationCategory,
+	categoriesAttribute,
+	categoriesList,
+	topBuffer,
 	yNodes
 };

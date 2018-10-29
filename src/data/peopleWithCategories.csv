@@ -1,438 +1,438 @@
-id,Gender,Age,AgeCategory,Continent,populationCategory,Occupation type,YearsStudiesCategory,NumberKidsCategory
-0,F,30,25-35,Oceania,1M-5M,Student,5+,0
-1,F,32,25-35,Asia,1M-5M,Executive,2-5,0
-2,F,69,65+,Europe,5-15k,Retiree,0-2,2-5
-3,M,58,50-65,Europe,0-5k,Farmer,0-2,2-5
-4,F,28,25-35,Africa,1M-5M,Artist,2-5,0
-5,F,28,25-35,Africa,1M-5M,Executive,2-5,0
-6,M,28,25-35,Europe,5M+,Executive,2-5,0
-7,F,27,25-35,Europe,15-100k,"Craftsmen, merchants & small business owner",2-5,0
-8,M,28,25-35,Europe,1M-5M,"Craftsmen, merchants & small business owner",2-5,0
-9,M,28,25-35,Europe,15-100k,Executive,2-5,0
-10,F,58,50-65,Americas,1M-5M,Worker,0-2,2-5
-11,F,29,25-35,Americas,1M-5M,Liberal profession and intellectual occupation,2-5,0
-12,F,36,35-50,Europe,1M-5M,Executive,2-5,2-5
-13,M,27,25-35,Europe,1M-5M,Executive,2-5,0
-14,M,28,25-35,Europe,1M-5M,Executive,2-5,0
-15,F,27,25-35,Europe,100k-1M,Artist,2-5,0
-16,M,66,65+,Europe,1M-5M,Retiree,2-5,1
-17,F,15,0-15,Europe,1M-5M,Kid,0-2,0
-18,F,45,35-50,Europe,1M-5M,Not paid occupation,2-5,2-5
-19,F,13,0-15,Europe,1M-5M,Kid,0-2,0
-20,M,80,65+,Europe,1M-5M,Retiree,2-5,2-5
-21,M,56,50-65,Europe,1M-5M,"Craftsmen, merchants & small business owner",0-2,2-5
-22,F,38,35-50,Europe,1M-5M,Liberal profession and intellectual occupation,2-5,1
-23,M,25,15-25,Africa,1M-5M,Executive,2-5,0
-24,M,25,15-25,Americas,1M-5M,Executive,2-5,0
-25,F,25,15-25,Europe,1M-5M,Executive,2-5,0
-26,F,25,15-25,Europe,1M-5M,Executive,2-5,0
-27,M,26,25-35,Europe,1M-5M,Student,2-5,0
-28,F,18,15-25,Europe,1M-5M,Student,2-5,0
-29,F,18,15-25,Europe,1M-5M,Student,2-5,0
-30,M,25,15-25,Europe,1M-5M,Executive,2-5,0
-31,M,25,15-25,Europe,1M-5M,Student,2-5,0
-32,F,23,15-25,Americas,1M-5M,Teacher,2-5,0
-33,F,27,25-35,Europe,1M-5M,Liberal profession and intellectual occupation,2-5,0
-34,F,58,50-65,Europe,1M-5M,Liberal profession and intellectual occupation,2-5,0
-35,F,44,35-50,Europe,1M-5M,Executive,5+,2-5
-36,F,58,50-65,Europe,1M-5M,Liberal profession and intellectual occupation,2-5,0
-37,F,21,15-25,Europe,1M-5M,Liberal profession and intellectual occupation,2-5,0
-38,M,35,25-35,Europe,1M-5M,Liberal profession and intellectual occupation,0-2,0
-39,M,50,35-50,Europe,1M-5M,Liberal profession and intellectual occupation,5+,1
-40,M,39,35-50,Europe,1M-5M,Executive,2-5,2-5
-41,M,27,25-35,Europe,1M-5M,Artist,0-2,0
-42,M,13,0-15,Europe,1M-5M,Student,0-2,0
-43,F,26,25-35,Europe,1M-5M,Liberal profession and intellectual occupation,5+,0
-44,F,10,0-15,Europe,1M-5M,Kid,0-2,0
-45,F,8,0-15,Europe,1M-5M,Kid,0-2,0
-46,M,8,0-15,Europe,1M-5M,Kid,0-2,0
-47,M,63,50-65,Africa,1M-5M,"Craftsmen, merchants & small business owner",0-2,1
-48,F,26,25-35,Europe,5M+,Executive,2-5,0
-49,F,26,25-35,Europe,5M+,Liberal profession and intellectual occupation,2-5,0
-50,F,26,25-35,Africa,5M+,Liberal profession and intellectual occupation,2-5,0
-51,M,26,25-35,Africa,5M+,Student,2-5,0
-52,M,25,15-25,Europe,5M+,Liberal profession and intellectual occupation,2-5,0
-53,M,68,65+,Europe,5M+,Religious,0-2,0
-54,M,32,25-35,Asia,1M-5M,Artist,5+,0
-55,M,21,15-25,Europe,1M-5M,Student,2-5,0
-56,F,22,15-25,Europe,1M-5M,Student,2-5,0
-57,F,21,15-25,Asia,5M+,Student,2-5,0
-58,M,66,65+,Asia,5M+,Liberal profession and intellectual occupation,5+,2-5
-59,M,46,35-50,Asia,5M+,Employee,0-2,1
-60,F,16,15-25,Asia,5M+,Student,0-2,0
-61,M,52,50-65,Asia,5M+,"Craftsmen, merchants & small business owner",2-5,0
-62,F,35,25-35,Asia,5M+,Executive,2-5,0
-63,M,39,35-50,Asia,5M+,Executive,2-5,1
-64,F,24,15-25,Americas,5M+,Liberal profession and intellectual occupation,2-5,0
-65,M,25,15-25,Asia,5M+,Not paid occupation,5+,0
-66,M,31,25-35,Asia,5M+,Not paid occupation,2-5,0
-67,M,40,35-50,Asia,1M-5M,"Craftsmen, merchants & small business owner",2-5,2-5
-68,F,28,25-35,Europe,1M-5M,Executive,2-5,0
-69,M,28,25-35,Europe,1M-5M,Executive,2-5,0
-70,M,40,35-50,Americas,5M+,Executive,5+,2-5
-71,F,40,35-50,Americas,5M+,Executive,0-2,2-5
-72,M,37,35-50,Europe,1M-5M,Executive,2-5,2-5
-73,F,12,0-15,Europe,1M-5M,Kid,0-2,0
-74,F,10,0-15,Europe,1M-5M,Kid,0-2,0
-75,M,8,0-15,Europe,1M-5M,Kid,0-2,0
-76,M,95,65+,Europe,1M-5M,Religious,2-5,0
-77,F,22,15-25,Europe,1M-5M,Artist,0-2,0
-78,F,26,25-35,Europe,1M-5M,Liberal profession and intellectual occupation,5+,0
-79,F,39,35-50,Asia,100k-1M,"Craftsmen, merchants & small business owner",2-5,2-5
-80,M,28,25-35,Asia,100k-1M,"Craftsmen, merchants & small business owner",2-5,0
-81,M,45,35-50,Asia,100k-1M,Religious,2-5,2-5
-82,M,39,35-50,Asia,100k-1M,"Craftsmen, merchants & small business owner",2-5,2-5
-83,M,19,15-25,Europe,1M-5M,Not paid occupation,0-2,0
-84,F,37,35-50,Europe,1M-5M,Executive,2-5,2-5
-85,M,5,0-15,Europe,1M-5M,Kid,0-2,0
-86,F,8,0-15,Europe,1M-5M,Kid,0-2,0
-87,M,36,35-50,Asia,1M-5M,"Craftsmen, merchants & small business owner",2-5,0
-88,F,37,35-50,Europe,1M-5M,Executive,2-5,2-5
-89,M,6,0-15,Europe,1M-5M,Kid,0-2,0
-90,F,27,25-35,Europe,1M-5M,Liberal profession and intellectual occupation,2-5,0
-91,F,11,0-15,Asia,5M+,Kid,0-2,0
-92,F,10,0-15,Europe,5M+,Kid,0-2,0
-93,F,7,0-15,Europe,5M+,Kid,0-2,0
-94,M,37,35-50,Europe,1M-5M,Artist,5+,1
-95,F,28,25-35,Asia,1M-5M,Executive,2-5,0
-96,F,26,25-35,Asia,1M-5M,Artist,5+,0
-97,M,30,25-35,Americas,1M-5M,Employee,2-5,0
-98,F,30,25-35,Americas,1M-5M,Liberal profession and intellectual occupation,5+,0
-99,M,34,25-35,Asia,1M-5M,Liberal profession and intellectual occupation,5+,2-5
-100,M,74,65+,Europe,1M-5M,Liberal profession and intellectual occupation,5+,2-5
-101,F,8,0-15,Europe,1M-5M,Kid,0-2,0
-102,F,6,0-15,Europe,1M-5M,Kid,0-2,0
-103,F,60,50-65,Europe,5-15k,Retiree,0-2,2-5
-104,F,10,0-15,Europe,5M+,Kid,0-2,0
-105,M,27,25-35,Americas,1M-5M,Executive,5+,0
-106,M,28,25-35,Americas,1M-5M,Liberal profession and intellectual occupation,5+,0
-107,F,33,25-35,Americas,1M-5M,Liberal profession and intellectual occupation,2-5,0
-108,M,35,25-35,Americas,1M-5M,Liberal profession and intellectual occupation,0-2,0
-109,M,28,25-35,Americas,1M-5M,Executive,2-5,0
-110,M,11,0-15,Americas,1M-5M,Kid,0-2,0
-111,M,9,0-15,Americas,1M-5M,Kid,0-2,0
-112,F,28,25-35,Americas,1M-5M,Artist,2-5,0
-113,F,83,65+,Americas,1M-5M,Retiree,0-2,0
-114,F,43,35-50,Europe,5M+,Liberal profession and intellectual occupation,2-5,2-5
-115,F,29,25-35,Americas,1M-5M,"Craftsmen, merchants & small business owner",5+,0
-116,F,27,25-35,Americas,1M-5M,Liberal profession and intellectual occupation,2-5,0
-117,M,54,50-65,Americas,15-100k,Farmer,2-5,2-5
-118,M,83,65+,Europe,15-100k,Farmer,0-2,2-5
-119,M,38,35-50,Americas,100k-1M,Farmer,0-2,2-5
-120,M,45,35-50,Americas,15-100k,Farmer,5+,2-5
-121,M,44,35-50,Americas,15-100k,Liberal profession and intellectual occupation,5+,2-5
-122,F,43,35-50,Americas,100k-1M,Liberal profession and intellectual occupation,0-2,0
-123,F,30,25-35,Americas,1M-5M,"Craftsmen, merchants & small business owner",2-5,0
-124,M,66,65+,Americas,1M-5M,Liberal profession and intellectual occupation,5+,2-5
-125,F,51,50-65,Americas,100k-1M,Teacher,5+,2-5
-126,F,68,65+,Americas,100k-1M,Artist,0-2,0
-127,F,24,15-25,Americas,5M+,Liberal profession and intellectual occupation,2-5,0
-128,F,49,35-50,Americas,5-15k,"Craftsmen, merchants & small business owner",0-2,2-5
-129,M,78,65+,Americas,100k-1M,Liberal profession and intellectual occupation,5+,2-5
-130,F,9,0-15,Americas,100k-1M,Kid,0-2,0
-131,F,41,35-50,Americas,100k-1M,Worker,0-2,5+
-132,M,43,35-50,Americas,100k-1M,Liberal profession and intellectual occupation,5+,2-5
-133,F,33,25-35,Americas,100k-1M,Executive,2-5,0
-134,F,11,0-15,Europe,100k-1M,Kid,0-2,0
-135,F,7,0-15,Europe,100k-1M,Kid,0-2,0
-136,M,8,0-15,Americas,100k-1M,Kid,0-2,0
-137,M,11,0-15,Americas,100k-1M,Kid,0-2,0
-138,M,64,50-65,Americas,100k-1M,Retiree,2-5,2-5
-139,M,41,35-50,Americas,100k-1M,Liberal profession and intellectual occupation,2-5,2-5
-140,F,40,35-50,Americas,100k-1M,Religious,0-2,0
-141,F,73,65+,Europe,100k-1M,Retiree,5+,2-5
-142,F,30,25-35,Americas,1M-5M,Employee,0-2,1
-143,F,30,25-35,Americas,1M-5M,Employee,0-2,0
-144,M,45,35-50,Americas,5-15k,Worker,0-2,2-5
-145,M,30,25-35,Europe,100k-1M,Executive,2-5,1
-146,F,61,50-65,Europe,100k-1M,Teacher,2-5,2-5
-147,M,10,0-15,Americas,0-5k,Kid,0-2,0
-148,F,8,0-15,Americas,0-5k,Kid,0-2,0
-149,M,32,25-35,Americas,0-5k,"Craftsmen, merchants & small business owner",0-2,2-5
-150,F,28,25-35,Americas,0-5k,Employee,2-5,0
-151,M,34,25-35,Asia,5M+,Executive,5+,0
-152,F,24,15-25,Americas,5M+,Executive,2-5,0
-153,F,55,50-65,Americas,100k-1M,Teacher,2-5,0
-154,M,50,35-50,Americas,5M+,Liberal profession and intellectual occupation,0-2,2-5
-155,F,9,0-15,Americas,5M+,Kid,0-2,0
-156,F,36,35-50,Americas,5M+,Worker,0-2,1
-157,F,11,0-15,Americas,5M+,Kid,0-2,0
-158,F,69,65+,Europe,15-100k,Retiree,5+,1
-159,F,7,0-15,Americas,1M-5M,Kid,0-2,0
-160,M,51,50-65,Americas,5M+,Worker,0-2,0
-161,M,42,35-50,Americas,5M+,Not paid occupation,2-5,0
-162,M,44,35-50,Americas,0-5k,Worker,0-2,0
-163,M,60,50-65,Americas,5M+,Executive,0-2,2-5
-164,F,42,35-50,Americas,1M-5M,Liberal profession and intellectual occupation,5+,0
-165,F,74,65+,Americas,1M-5M,Retiree,2-5,2-5
-166,M,64,50-65,Americas,5M+,Teacher,5+,0
-167,M,55,50-65,Americas,15-100k,"Craftsmen, merchants & small business owner",0-2,2-5
-168,M,40,35-50,Americas,15-100k,Artist,0-2,2-5
-169,M,20,15-25,Americas,15-100k,Artist,0-2,0
-170,M,45,35-50,Americas,0-5k,Farmer,0-2,2-5
-171,M,23,15-25,Americas,0-5k,Farmer,2-5,0
-172,M,50,35-50,Americas,0-5k,Farmer,5+,2-5
-173,F,70,65+,Americas,0-5k,Not paid occupation,0-2,2-5
-174,M,25,15-25,Americas,0-5k,Worker,0-2,1
-175,M,30,25-35,Americas,5M+,Executive,2-5,0
-176,M,46,35-50,Americas,100k-1M,Worker,0-2,2-5
-177,F,43,35-50,Americas,5M+,Not paid occupation,0-2,0
-178,F,31,25-35,Americas,5M+,Teacher,5+,1
-179,M,28,25-35,Americas,15-100k,Farmer,5+,0
-180,F,50,35-50,Americas,5M+,Liberal profession and intellectual occupation,5+,0
-181,M,32,25-35,Americas,5M+,Liberal profession and intellectual occupation,5+,0
-182,M,28,25-35,Americas,1M-5M,Employee,0-2,2-5
-183,M,34,25-35,Americas,1M-5M,Executive,2-5,0
-184,M,19,15-25,Americas,1M-5M,Student,2-5,0
-185,F,36,35-50,Americas,1M-5M,Employee,5+,2-5
-186,M,42,35-50,Americas,1M-5M,"Craftsmen, merchants & small business owner",2-5,2-5
-187,M,67,65+,Americas,1M-5M,Executive,5+,2-5
-188,F,30,25-35,Americas,100k-1M,Employee,2-5,0
-189,M,46,35-50,Americas,100k-1M,Artist,2-5,0
-190,F,7,0-15,Americas,1M-5M,Kid,0-2,0
-191,F,40,35-50,Americas,100k-1M,"Craftsmen, merchants & small business owner",2-5,0
-192,F,49,35-50,Americas,100k-1M,Artist,2-5,2-5
-193,M,59,50-65,Americas,100k-1M,Retiree,5+,2-5
-194,F,14,0-15,Americas,100k-1M,Kid,0-2,0
-195,F,9,0-15,Americas,100k-1M,Kid,0-2,0
-196,M,10,0-15,Americas,100k-1M,Kid,0-2,0
-197,M,35,25-35,Americas,100k-1M,Artist,2-5,0
-198,M,7,0-15,Americas,100k-1M,Kid,0-2,0
-199,M,30,25-35,Americas,100k-1M,Employee,2-5,0
-200,F,26,25-35,Americas,5-15k,Artist,0-2,0
-201,M,44,35-50,Americas,100k-1M,Teacher,2-5,2-5
-202,M,37,35-50,Americas,1M-5M,Liberal profession and intellectual occupation,0-2,2-5
-203,M,66,65+,Americas,100k-1M,Artist,2-5,0
-204,M,30,25-35,Americas,100k-1M,Artist,0-2,0
-205,F,27,25-35,Americas,100k-1M,Liberal profession and intellectual occupation,2-5,0
-206,F,26,25-35,Americas,5M+,Executive,2-5,0
-207,F,5,0-15,Europe,5M+,Kid,0-2,0
-208,F,8,0-15,Europe,5M+,Kid,0-2,0
-209,F,29,25-35,Europe,5M+,Liberal profession and intellectual occupation,2-5,0
-210,M,41,35-50,Americas,15-100k,Artist,2-5,2-5
-211,F,41,35-50,Americas,15-100k,Liberal profession and intellectual occupation,2-5,2-5
-212,M,38,35-50,Americas,15-100k,Worker,0-2,0
-213,M,39,35-50,Asia,15-100k,Liberal profession and intellectual occupation,2-5,1
-214,F,30,25-35,Americas,100k-1M,Artist,5+,0
-215,F,34,25-35,Americas,100k-1M,Liberal profession and intellectual occupation,2-5,0
-216,F,28,25-35,Americas,100k-1M,Liberal profession and intellectual occupation,2-5,0
-217,F,22,15-25,Americas,100k-1M,Student,0-2,0
-218,F,57,50-65,Americas,5M+,Artist,5+,0
-219,F,33,25-35,Asia,5M+,Executive,5+,0
-220,M,31,25-35,Europe,5M+,Liberal profession and intellectual occupation,5+,0
-221,F,31,25-35,Europe,5M+,Not paid occupation,5+,0
-222,F,30,25-35,Americas,5M+,Executive,5+,0
-223,F,24,15-25,Americas,5M+,Liberal profession and intellectual occupation,5+,0
-224,M,36,35-50,Europe,1M-5M,Executive,2-5,1
-225,M,27,25-35,Europe,1M-5M,Liberal profession and intellectual occupation,2-5,0
-226,M,59,50-65,Europe,1M-5M,Liberal profession and intellectual occupation,2-5,2-5
-227,M,29,25-35,Oceania,5M+,Artist,2-5,0
-228,M,13,0-15,Asia,1M-5M,Kid,0-2,0
-229,M,10,0-15,Asia,1M-5M,Kid,0-2,0
-230,M,6,0-15,Asia,1M-5M,Kid,0-2,0
-231,F,9,0-15,Europe,5M+,Kid,0-2,0
-232,F,9,0-15,Europe,5M+,Kid,0-2,0
-233,F,10,0-15,Europe,5M+,Kid,0-2,0
-234,M,11,0-15,Europe,5M+,Kid,0-2,0
-235,M,10,0-15,Europe,5M+,Kid,0-2,0
-236,M,10,0-15,Europe,5M+,Kid,0-2,0
-237,F,11,0-15,Europe,5M+,Kid,0-2,0
-238,F,11,0-15,Europe,5M+,Kid,0-2,0
-239,M,11,0-15,Europe,5M+,Kid,0-2,0
-240,F,11,0-15,Europe,5M+,Kid,0-2,0
-241,M,11,0-15,Asia,5M+,Kid,0-2,0
-242,F,11,0-15,Africa,5M+,Kid,0-2,0
-243,F,11,0-15,Europe,5M+,Kid,0-2,0
-244,F,11,0-15,Asia,5M+,Kid,0-2,0
-245,F,7,0-15,Europe,5M+,Kid,0-2,0
-246,F,7,0-15,Europe,5M+,Kid,0-2,0
-247,F,9,0-15,Europe,5M+,Kid,0-2,0
-248,M,8,0-15,Europe,5M+,Kid,0-2,0
-249,F,6,0-15,Oceania,5M+,Kid,0-2,0
-250,M,7,0-15,Europe,5M+,Kid,0-2,0
-251,M,6,0-15,Europe,5M+,Kid,0-2,0
-252,F,10,0-15,Europe,5M+,Kid,0-2,0
-253,F,9,0-15,Europe,5M+,Kid,0-2,0
-254,F,31,25-35,Europe,5M+,Executive,2-5,0
-255,F,24,15-25,Asia,5M+,Liberal profession and intellectual occupation,2-5,0
-256,M,44,35-50,Europe,5M+,"Craftsmen, merchants & small business owner",5+,1
-257,F,76,65+,Europe,5M+,Retiree,5+,1
-258,M,39,35-50,Europe,5M+,Artist,5+,1
-259,F,48,35-50,Asia,5M+,Worker,0-2,2-5
-260,M,26,25-35,Europe,5M+,Employee,2-5,0
-261,F,33,25-35,Europe,5M+,Liberal profession and intellectual occupation,2-5,0
-262,F,31,25-35,Europe,5M+,Liberal profession and intellectual occupation,5+,0
-263,F,26,25-35,Asia,1M-5M,Liberal profession and intellectual occupation,2-5,0
-264,F,26,25-35,Asia,5M+,Liberal profession and intellectual occupation,2-5,0
-265,F,27,25-35,Europe,100k-1M,Employee,5+,1
-266,M,23,15-25,Asia,5M+,Student,2-5,0
-267,F,28,25-35,Europe,0-5k,"Craftsmen, merchants & small business owner",2-5,0
-268,M,54,50-65,Asia,0-5k,Farmer,0-2,2-5
-269,M,61,50-65,Asia,0-5k,Worker,0-2,2-5
-270,F,36,35-50,Asia,5M+,Teacher,2-5,0
-271,F,24,15-25,Asia,1M-5M,Student,2-5,0
-272,M,28,25-35,Asia,1M-5M,Worker,0-2,0
-273,M,28,25-35,Asia,1M-5M,Liberal profession and intellectual occupation,2-5,0
-274,F,47,35-50,Africa,1M-5M,Religious,2-5,0
-275,F,20,15-25,Asia,1M-5M,Student,2-5,0
-276,F,31,25-35,Asia,1M-5M,Religious,2-5,0
-277,F,7,0-15,Asia,1M-5M,Kid,0-2,0
-278,F,9,0-15,Asia,1M-5M,Kid,0-2,0
-279,F,24,15-25,Asia,1M-5M,Student,2-5,0
-280,F,53,50-65,Asia,1M-5M,Teacher,5+,2-5
-281,F,58,50-65,Asia,1M-5M,Employee,2-5,2-5
-282,F,46,35-50,Asia,1M-5M,"Craftsmen, merchants & small business owner",2-5,1
-283,F,30,25-35,Asia,1M-5M,Not paid occupation,2-5,2-5
-284,F,40,35-50,Asia,1M-5M,Teacher,0-2,2-5
-285,M,28,25-35,Asia,1M-5M,Employee,0-2,1
-286,M,26,25-35,Asia,1M-5M,Student,2-5,0
-287,M,34,25-35,Asia,1M-5M,Not paid occupation,2-5,1
-288,F,45,35-50,Asia,1M-5M,Liberal profession and intellectual occupation,0-2,2-5
-289,F,25,15-25,Asia,5M+,Liberal profession and intellectual occupation,2-5,0
-290,M,27,25-35,Asia,5M+,Employee,2-5,0
-291,F,28,25-35,Asia,5M+,Teacher,5+,0
-292,F,29,25-35,Asia,5M+,Liberal profession and intellectual occupation,0-2,0
-293,M,26,25-35,Asia,5M+,Executive,2-5,0
-294,F,33,25-35,Asia,5M+,Executive,5+,0
-295,F,29,25-35,Asia,5M+,Executive,5+,0
-296,F,36,35-50,Asia,5M+,Executive,2-5,1
-297,F,6,0-15,Asia,1M-5M,Kid,0-2,0
-298,M,32,25-35,Asia,5M+,Liberal profession and intellectual occupation,2-5,0
-299,M,33,25-35,Asia,5M+,Worker,0-2,0
-300,M,54,50-65,Americas,5M+,Liberal profession and intellectual occupation,5+,2-5
-301,F,25,15-25,Asia,5M+,Executive,2-5,0
-302,M,46,35-50,Asia,5M+,Executive,5+,1
-303,F,24,15-25,Asia,5M+,Executive,2-5,0
-304,M,26,25-35,Asia,5M+,Student,2-5,0
-305,F,18,15-25,Asia,5M+,Student,0-2,0
-306,F,34,25-35,Asia,5M+,Teacher,2-5,0
-307,M,41,35-50,Asia,5M+,Employee,2-5,0
-308,M,13,0-15,Asia,5M+,Kid,0-2,0
-309,M,31,25-35,Asia,5M+,Teacher,5+,0
-310,M,24,15-25,Asia,5M+,Executive,2-5,0
-311,F,30,25-35,Asia,5M+,Teacher,2-5,0
-312,M,47,35-50,Asia,5M+,Religious,2-5,0
-313,M,26,25-35,Asia,0-5k,Student,0-2,0
-314,M,55,50-65,Asia,5M+,Liberal profession and intellectual occupation,0-2,2-5
-315,M,48,35-50,Europe,5M+,Liberal profession and intellectual occupation,2-5,1
-316,F,24,15-25,Asia,1M-5M,Teacher,2-5,0
-317,F,22,15-25,Asia,0-5k,Student,0-2,0
-318,M,33,25-35,Asia,100k-1M,Employee,0-2,2-5
-319,F,83,65+,Asia,100k-1M,Not paid occupation,0-2,2-5
-320,F,53,50-65,Asia,100k-1M,Teacher,5+,1
-321,F,32,25-35,Asia,100k-1M,Worker,0-2,2-5
-322,M,37,35-50,Asia,100k-1M,Worker,0-2,5+
-323,M,35,25-35,Asia,100k-1M,Worker,0-2,2-5
-324,F,23,15-25,Asia,0-5k,Worker,0-2,0
-325,M,37,35-50,Asia,100k-1M,Liberal profession and intellectual occupation,2-5,2-5
-326,M,43,35-50,Asia,100k-1M,Executive,2-5,2-5
-327,M,36,35-50,Asia,100k-1M,Executive,2-5,2-5
-328,F,41,35-50,Asia,100k-1M,Not paid occupation,5+,1
-329,F,32,25-35,Asia,100k-1M,Employee,2-5,1
-330,F,35,25-35,Americas,1M-5M,Liberal profession and intellectual occupation,2-5,0
-331,F,17,15-25,Asia,100k-1M,Student,0-2,0
-332,M,19,15-25,Asia,100k-1M,Student,0-2,0
-333,F,19,15-25,Asia,100k-1M,Student,0-2,0
-334,F,19,15-25,Asia,100k-1M,Student,0-2,0
-335,F,18,15-25,Asia,100k-1M,Student,0-2,0
-336,M,20,15-25,Asia,100k-1M,Student,0-2,0
-337,F,18,15-25,Asia,100k-1M,Student,0-2,0
-338,F,18,15-25,Asia,100k-1M,Student,0-2,0
-339,F,20,15-25,Asia,100k-1M,Student,0-2,0
-340,F,20,15-25,Asia,100k-1M,Student,0-2,0
-341,F,18,15-25,Asia,100k-1M,Student,0-2,0
-342,M,18,15-25,Asia,100k-1M,Student,0-2,0
-343,F,18,15-25,Asia,100k-1M,Student,0-2,0
-344,F,18,15-25,Asia,100k-1M,Student,0-2,0
-345,F,20,15-25,Asia,1M-5M,Student,0-2,0
-346,M,18,15-25,Asia,1M-5M,Student,0-2,0
-347,M,22,15-25,Asia,1M-5M,Student,0-2,0
-348,F,20,15-25,Asia,1M-5M,Student,0-2,0
-349,F,16,15-25,Asia,1M-5M,Student,0-2,0
-350,F,21,15-25,Asia,1M-5M,Student,0-2,0
-351,M,21,15-25,Asia,1M-5M,Student,0-2,0
-352,F,18,15-25,Asia,1M-5M,Student,0-2,0
-353,F,20,15-25,Asia,1M-5M,Student,0-2,0
-354,M,24,15-25,Europe,1M-5M,Student,0-2,0
-355,M,29,25-35,Europe,1M-5M,Student,0-2,0
-356,F,30,25-35,Asia,100k-1M,Artist,5+,0
-357,M,43,35-50,Asia,100k-1M,Worker,0-2,2-5
-358,F,40,35-50,Asia,5M+,Executive,5+,0
-359,F,75,65+,Asia,1M-5M,Not paid occupation,2-5,2-5
-360,F,34,25-35,Oceania,1M-5M,Not paid occupation,2-5,1
-361,M,27,25-35,Asia,1M-5M,"Craftsmen, merchants & small business owner",2-5,2-5
-362,F,33,25-35,Asia,100k-1M,Not paid occupation,2-5,
-363,M,50,35-50,Asia,100k-1M,"Craftsmen, merchants & small business owner",0-2,2-5
-364,M,34,25-35,Asia,100k-1M,Executive,5+,0
-365,F,15,0-15,Asia,100k-1M,Student,0-2,0
-366,M,40,35-50,Asia,100k-1M,Liberal profession and intellectual occupation,5+,0
-367,M,55,50-65,Asia,100k-1M,Liberal profession and intellectual occupation,2-5,2-5
-368,F,34,25-35,Asia,100k-1M,Worker,0-2,2-5
-369,M,44,35-50,Asia,100k-1M,Farmer,0-2,2-5
-370,F,16,15-25,Asia,100k-1M,Student,0-2,0
-371,M,30,25-35,Asia,5-15k,Worker,5+,0
-372,M,31,25-35,Asia,100k-1M,Teacher,2-5,2-5
-373,M,64,50-65,Asia,5-15k,Farmer,0-2,0
-374,F,46,35-50,Asia,5-15k,Farmer,0-2,2-5
-375,F,23,15-25,Asia,5-15k,"Craftsmen, merchants & small business owner",0-2,0
-376,M,24,15-25,Asia,5-15k,Farmer,0-2,1
-377,M,14,0-15,Asia,5-15k,Student,0-2,0
-378,M,49,35-50,Asia,5-15k,Farmer,0-2,2-5
-379,F,26,25-35,Asia,5-15k,Not paid occupation,0-2,1
-380,M,48,35-50,Asia,100k-1M,Liberal profession and intellectual occupation,2-5,0
-381,F,17,15-25,Asia,100k-1M,Student,0-2,0
-382,M,30,25-35,Asia,5M+,Executive,2-5,0
-383,F,27,25-35,Asia,5M+,Liberal profession and intellectual occupation,5+,0
-384,M,42,35-50,Asia,5M+,Employee,0-2,2-5
-385,M,32,25-35,Asia,1M-5M,Liberal profession and intellectual occupation,2-5,1
-386,M,23,15-25,Asia,5M+,Artist,2-5,0
-387,M,83,65+,Asia,5M+,Liberal profession and intellectual occupation,5+,2-5
-388,F,40,35-50,Asia,5M+,Employee,2-5,0
-389,F,26,25-35,Asia,5M+,Teacher,2-5,0
-390,F,31,25-35,Europe,1M-5M,Liberal profession and intellectual occupation,2-5,0
-391,F,25,15-25,Asia,5M+,Artist,2-5,0
-392,F,30,25-35,Africa,1M-5M,Worker,0-2,0
-393,M,28,25-35,Africa,1M-5M,Employee,2-5,0
-394,M,67,65+,Africa,1M-5M,Retiree,0-2,2-5
-395,F,20,15-25,Asia,5M+,Artist,2-5,0
-396,M,23,15-25,Asia,1M-5M,Student,2-5,0
-397,M,36,35-50,Asia,1M-5M,Religious,5+,2-5
-398,M,73,65+,Asia,5M+,Retiree,2-5,2-5
-399,M,21,15-25,Asia,5M+,Executive,0-2,0
-400,F,25,15-25,Asia,5M+,Liberal profession and intellectual occupation,5+,0
-401,M,30,25-35,Asia,5M+,Employee,5+,0
-402,M,24,15-25,Asia,5M+,Employee,2-5,0
-403,M,25,15-25,Asia,5M+,Liberal profession and intellectual occupation,2-5,0
-404,M,57,50-65,Asia,5M+,Worker,0-2,2-5
-405,F,24,15-25,Asia,5M+,Student,2-5,0
-406,M,54,50-65,Africa,100k-1M,Retiree,0-2,5+
-407,F,37,35-50,Africa,1M-5M,Employee,2-5,2-5
-408,M,23,15-25,Africa,0-5k,Worker,0-2,0
-409,F,30,25-35,Africa,0-5k,Worker,0-2,0
-410,M,54,50-65,Africa,0-5k,Worker,0-2,0
-411,F,45,35-50,Africa,1M-5M,Executive,5+,0
-412,M,36,35-50,Africa,1M-5M,Farmer,2-5,1
-413,M,49,35-50,Africa,0-5k,Farmer,0-2,2-5
-414,F,55,50-65,Africa,0-5k,Farmer,0-2,2-5
-415,F,42,35-50,Africa,1M-5M,Executive,2-5,1
-416,F,31,25-35,Africa,1M-5M,Employee,5+,0
-417,F,26,25-35,Africa,1M-5M,Liberal profession and intellectual occupation,2-5,0
-418,M,30,25-35,Africa,1M-5M,Not paid occupation,0-2,0
-419,F,35,25-35,Africa,0-5k,Farmer,0-2,2-5
-420,F,15,0-15,Africa,0-5k,Student,0-2,0
-421,M,51,50-65,Africa,1M-5M,Religious,5+,2-5
-422,F,39,35-50,Africa,1M-5M,Executive,5+,2-5
-423,M,24,15-25,Africa,0-5k,Student,2-5,0
-424,M,51,50-65,Africa,1M-5M,Liberal profession and intellectual occupation,5+,2-5
-425,M,25,15-25,Africa,1M-5M,Executive,2-5,2-5
-426,F,71,65+,Africa,1M-5M,Religious,2-5,0
-427,M,56,50-65,Europe,1M-5M,Artist,2-5,2-5
-428,F,28,25-35,Europe,1M-5M,Artist,2-5,0
-429,F,31,25-35,Europe,1M-5M,Artist,2-5,0
-430,M,50,35-50,Europe,15-100k,Employee,2-5,1
-431,M,58,50-65,Asia,1M-5M,Liberal profession and intellectual occupation,2-5,2-5
-432,F,32,25-35,Asia,5M+,Executive,2-5,0
-433,M,62,50-65,Europe,15-100k,Liberal profession and intellectual occupation,5+,2-5
-434,F,28,25-35,Europe,5-15k,Liberal profession and intellectual occupation,2-5,0
-435,M,57,50-65,Europe,1M-5M,Liberal profession and intellectual occupation,2-5,2-5
-436,M,63,50-65,Europe,1M-5M,Not paid occupation,0-2,0
+id,img,Gender,Age,AgeCategory,Country,Continent,populationCategory,Occupation type,YearsStudiesCategory,NumberKidsCategory
+0,AUS001.jpg,F,30,25-35,Australia,Oceania,1M-5M,Student,5+,0
+1,CHN01.jpg,F,32,25-35,China,Asia,1M-5M,Executive,2-5,0
+2,FR001.jpg,F,69,65+,France,Europe,5-15k,Retiree,0-2,2-5
+3,FR002.jpg,M,58,50-65,France,Europe,0-5k,Farmer,0-2,2-5
+4,MAD001.jpg,F,28,25-35,Madagascar,Africa,1M-5M,Artist,2-5,0
+5,MAD002.jpg,F,28,25-35,Madagascar,Africa,1M-5M,Executive,2-5,0
+6,FR003.jpg,M,28,25-35,France,Europe,5M+,Executive,2-5,0
+7,FR004.jpg,F,27,25-35,France,Europe,15-100k,"Craftsmen, merchants & small business owner",2-5,0
+8,FR005.jpg,M,28,25-35,France,Europe,1M-5M,"Craftsmen, merchants & small business owner",2-5,0
+9,FR006.jpg,M,28,25-35,France,Europe,15-100k,Executive,2-5,0
+10,PER001.jpg,F,58,50-65,Peru,Americas,1M-5M,Worker,0-2,2-5
+11,VEN001.jpg,F,29,25-35,Venezuela (Bolivarian Republic of),Americas,1M-5M,Liberal profession and intellectual occupation,2-5,0
+12,FR007.jpg,F,36,35-50,France,Europe,1M-5M,Executive,2-5,2-5
+13,FR008.jpg,M,27,25-35,France,Europe,1M-5M,Executive,2-5,0
+14,FR009.jpg,M,28,25-35,France,Europe,1M-5M,Executive,2-5,0
+15,ISR01.jpg,F,27,25-35,France,Europe,100k-1M,Artist,2-5,0
+16,FR010.jpg,M,66,65+,France,Europe,1M-5M,Retiree,2-5,1
+17,FR011.jpg,F,15,0-15,France,Europe,1M-5M,Kid,0-2,0
+18,FR012.jpg,F,45,35-50,France,Europe,1M-5M,Not paid occupation,2-5,2-5
+19,FR013.jpg,F,13,0-15,France,Europe,1M-5M,Kid,0-2,0
+20,FR014.jpg,M,80,65+,France,Europe,1M-5M,Retiree,2-5,2-5
+21,FR015.jpg,M,56,50-65,France,Europe,1M-5M,"Craftsmen, merchants & small business owner",0-2,2-5
+22,EN01.jpg,F,38,35-50,United Kingdom of Great Britain and Northern Ireland,Europe,1M-5M,Liberal profession and intellectual occupation,2-5,1
+23,ALG01.jpg,M,25,15-25,Algeria,Africa,1M-5M,Executive,2-5,0
+24,BRE01.jpg,M,25,15-25,Brazil,Americas,1M-5M,Executive,2-5,0
+25,RUS01.jpg,F,25,15-25,Russian Federation,Europe,1M-5M,Executive,2-5,0
+26,ESP01.jpg,F,25,15-25,Spain,Europe,1M-5M,Executive,2-5,0
+27,FR016.jpg,M,26,25-35,France,Europe,1M-5M,Student,2-5,0
+28,ESP02.jpg,F,18,15-25,Spain,Europe,1M-5M,Student,2-5,0
+29,ESP03.jpg,F,18,15-25,Spain,Europe,1M-5M,Student,2-5,0
+30,FR017.jpg,M,25,15-25,France,Europe,1M-5M,Executive,2-5,0
+31,FR018.jpg,M,25,15-25,France,Europe,1M-5M,Student,2-5,0
+32,USA01.jpg,F,23,15-25,United States of America,Americas,1M-5M,Teacher,2-5,0
+33,FR019.jpg,F,27,25-35,France,Europe,1M-5M,Liberal profession and intellectual occupation,2-5,0
+34,ESP04.jpg,F,58,50-65,Spain,Europe,1M-5M,Liberal profession and intellectual occupation,2-5,0
+35,ESP05.jpg,F,44,35-50,Spain,Europe,1M-5M,Executive,5+,2-5
+36,ESP06.jpg,F,58,50-65,Spain,Europe,1M-5M,Liberal profession and intellectual occupation,2-5,0
+37,ESP07.jpg,F,21,15-25,Spain,Europe,1M-5M,Liberal profession and intellectual occupation,2-5,0
+38,ESP08.jpg,M,35,25-35,Spain,Europe,1M-5M,Liberal profession and intellectual occupation,0-2,0
+39,ESP09.jpg,M,50,35-50,Spain,Europe,1M-5M,Liberal profession and intellectual occupation,5+,1
+40,FR020.jpg,M,39,35-50,France,Europe,1M-5M,Executive,2-5,2-5
+41,ESP10.jpg,M,27,25-35,Spain,Europe,1M-5M,Artist,0-2,0
+42,SUI01.jpg,M,13,0-15,Switzerland,Europe,1M-5M,Student,0-2,0
+43,FR021.jpg,F,26,25-35,France,Europe,1M-5M,Liberal profession and intellectual occupation,5+,0
+44,FR022.jpg,F,10,0-15,France,Europe,1M-5M,Kid,0-2,0
+45,FR023.jpg,F,8,0-15,France,Europe,1M-5M,Kid,0-2,0
+46,FR024.jpg,M,8,0-15,France,Europe,1M-5M,Kid,0-2,0
+47,ALG02.jpg,M,63,50-65,Algeria,Africa,1M-5M,"Craftsmen, merchants & small business owner",0-2,1
+48,EN02.jpg,F,26,25-35,United Kingdom of Great Britain and Northern Ireland,Europe,5M+,Executive,2-5,0
+49,EN03.jpg,F,26,25-35,United Kingdom of Great Britain and Northern Ireland,Europe,5M+,Liberal profession and intellectual occupation,2-5,0
+50,RSA01.jpg,F,26,25-35,South Africa,Africa,5M+,Liberal profession and intellectual occupation,2-5,0
+51,RSA02.jpg,M,26,25-35,South Africa,Africa,5M+,Student,2-5,0
+52,SCO01.jpg,M,25,15-25,United Kingdom of Great Britain and Northern Ireland,Europe,5M+,Liberal profession and intellectual occupation,2-5,0
+53,EN04.jpg,M,68,65+,United Kingdom of Great Britain and Northern Ireland,Europe,5M+,Religious,0-2,0
+54,ARM01.jpg,M,32,25-35,Armenia,Asia,1M-5M,Artist,5+,0
+55,FR025.jpg,M,21,15-25,France,Europe,1M-5M,Student,2-5,0
+56,FR026.jpg,F,22,15-25,France,Europe,1M-5M,Student,2-5,0
+57,IDN01.jpg,F,21,15-25,Indonesia,Asia,5M+,Student,2-5,0
+58,TR01.jpg,M,66,65+,Turkey,Asia,5M+,Liberal profession and intellectual occupation,5+,2-5
+59,TR02.jpg,M,46,35-50,Turkey,Asia,5M+,Employee,0-2,1
+60,TR03.jpg,F,16,15-25,Turkey,Asia,5M+,Student,0-2,0
+61,TR04.jpg,M,52,50-65,Turkey,Asia,5M+,"Craftsmen, merchants & small business owner",2-5,0
+62,TR05.jpg,F,35,25-35,Turkey,Asia,5M+,Executive,2-5,0
+63,TR06.jpg,M,39,35-50,Turkey,Asia,5M+,Executive,2-5,1
+64,USA02.jpg,F,24,15-25,United States of America,Americas,5M+,Liberal profession and intellectual occupation,2-5,0
+65,SYR02.jpg,M,25,15-25,Syrian Arab Republic,Asia,5M+,Not paid occupation,5+,0
+66,SYR03.jpg,M,31,25-35,Syrian Arab Republic,Asia,5M+,Not paid occupation,2-5,0
+67,SYR01.jpg,M,40,35-50,Syrian Arab Republic,Asia,1M-5M,"Craftsmen, merchants & small business owner",2-5,2-5
+68,FR031.jpg,F,28,25-35,France,Europe,1M-5M,Executive,2-5,0
+69,FR032.jpg,M,28,25-35,France,Europe,1M-5M,Executive,2-5,0
+70,VEN02.jpg,M,40,35-50,Venezuela (Bolivarian Republic of),Americas,5M+,Executive,5+,2-5
+71,VEN03.jpg,F,40,35-50,Venezuela (Bolivarian Republic of),Americas,5M+,Executive,0-2,2-5
+72,FR033.jpg,M,37,35-50,France,Europe,1M-5M,Executive,2-5,2-5
+73,FR034.jpg,F,12,0-15,France,Europe,1M-5M,Kid,0-2,0
+74,FR035.jpg,F,10,0-15,France,Europe,1M-5M,Kid,0-2,0
+75,FR036.jpg,M,8,0-15,France,Europe,1M-5M,Kid,0-2,0
+76,FR037.jpg,M,95,65+,France,Europe,1M-5M,Religious,2-5,0
+77,FR038.jpg,F,22,15-25,France,Europe,1M-5M,Artist,0-2,0
+78,FR039.jpg,F,26,25-35,France,Europe,1M-5M,Liberal profession and intellectual occupation,5+,0
+79,SYR04.jpg,F,39,35-50,Syrian Arab Republic,Asia,100k-1M,"Craftsmen, merchants & small business owner",2-5,2-5
+80,SYR05.jpg,M,28,25-35,Syrian Arab Republic,Asia,100k-1M,"Craftsmen, merchants & small business owner",2-5,0
+81,TIB01.jpg,M,45,35-50,China,Asia,100k-1M,Religious,2-5,2-5
+82,SYR06.jpg,M,39,35-50,Syrian Arab Republic,Asia,100k-1M,"Craftsmen, merchants & small business owner",2-5,2-5
+83,FR040.jpg,M,19,15-25,France,Europe,1M-5M,Not paid occupation,0-2,0
+84,FR041.jpg,F,37,35-50,France,Europe,1M-5M,Executive,2-5,2-5
+85,FR042.jpg,M,5,0-15,France,Europe,1M-5M,Kid,0-2,0
+86,FR043.jpg,F,8,0-15,France,Europe,1M-5M,Kid,0-2,0
+87,IND01.jpg,M,36,35-50,India,Asia,1M-5M,"Craftsmen, merchants & small business owner",2-5,0
+88,FR044.jpg,F,37,35-50,France,Europe,1M-5M,Executive,2-5,2-5
+89,FR045.jpg,M,6,0-15,France,Europe,1M-5M,Kid,0-2,0
+90,FR046.jpg,F,27,25-35,France,Europe,1M-5M,Liberal profession and intellectual occupation,2-5,0
+91,AFG01.jpg,F,11,0-15,Afghanistan,Asia,5M+,Kid,0-2,0
+92,EN06.jpg,F,10,0-15,United Kingdom of Great Britain and Northern Ireland,Europe,5M+,Kid,0-2,0
+93,EN07.jpg,F,7,0-15,United Kingdom of Great Britain and Northern Ireland,Europe,5M+,Kid,0-2,0
+94,LIB01.jpg,M,37,35-50,France,Europe,1M-5M,Artist,5+,1
+95,LIB02.jpg,F,28,25-35,Lebanon,Asia,1M-5M,Executive,2-5,0
+96,TR07.jpg,F,26,25-35,Turkey,Asia,1M-5M,Artist,5+,0
+97,VEN04.jpg,M,30,25-35,Venezuela (Bolivarian Republic of),Americas,1M-5M,Employee,2-5,0
+98,MEX01.jpg,F,30,25-35,Mexico,Americas,1M-5M,Liberal profession and intellectual occupation,5+,0
+99,ISR02.jpg,M,34,25-35,Israel,Asia,1M-5M,Liberal profession and intellectual occupation,5+,2-5
+100,FR047.jpg,M,74,65+,France,Europe,1M-5M,Liberal profession and intellectual occupation,5+,2-5
+101,FR049.jpg,F,8,0-15,France,Europe,1M-5M,Kid,0-2,0
+102,FR050.jpg,F,6,0-15,France,Europe,1M-5M,Kid,0-2,0
+103,FR051.jpg,F,60,50-65,France,Europe,5-15k,Retiree,0-2,2-5
+104,EN08.jpg,F,10,0-15,United Kingdom of Great Britain and Northern Ireland,Europe,5M+,Kid,0-2,0
+105,ARG01.jpg,M,27,25-35,Argentina,Americas,1M-5M,Executive,5+,0
+106,ARG02.jpg,M,28,25-35,Argentina,Americas,1M-5M,Liberal profession and intellectual occupation,5+,0
+107,ARG03.jpg,F,33,25-35,Argentina,Americas,1M-5M,Liberal profession and intellectual occupation,2-5,0
+108,CAN01.jpg,M,35,25-35,Canada,Americas,1M-5M,Liberal profession and intellectual occupation,0-2,0
+109,ARG04.jpg,M,28,25-35,Argentina,Americas,1M-5M,Executive,2-5,0
+110,ARG05.jpg,M,11,0-15,Argentina,Americas,1M-5M,Kid,0-2,0
+111,ARG06.jpg,M,9,0-15,Argentina,Americas,1M-5M,Kid,0-2,0
+112,ARG07.jpg,F,28,25-35,Argentina,Americas,1M-5M,Artist,2-5,0
+113,ARG08.jpg,F,83,65+,Argentina,Americas,1M-5M,Retiree,0-2,0
+114,EN09.jpg,F,43,35-50,United Kingdom of Great Britain and Northern Ireland,Europe,5M+,Liberal profession and intellectual occupation,2-5,2-5
+115,ARG09.jpg,F,29,25-35,Argentina,Americas,1M-5M,"Craftsmen, merchants & small business owner",5+,0
+116,ARG10.jpg,F,27,25-35,Argentina,Americas,1M-5M,Liberal profession and intellectual occupation,2-5,0
+117,ARG11.jpg,M,54,50-65,Argentina,Americas,15-100k,Farmer,2-5,2-5
+118,IT01.jpg,M,83,65+,Italy,Europe,15-100k,Farmer,0-2,2-5
+119,ARG12.jpg,M,38,35-50,Argentina,Americas,100k-1M,Farmer,0-2,2-5
+120,ARG13.jpg,M,45,35-50,Argentina,Americas,15-100k,Farmer,5+,2-5
+121,ARG14.jpg,M,44,35-50,Argentina,Americas,15-100k,Liberal profession and intellectual occupation,5+,2-5
+122,ARG15.jpg,F,43,35-50,Argentina,Americas,100k-1M,Liberal profession and intellectual occupation,0-2,0
+123,ARG16.jpg,F,30,25-35,Argentina,Americas,1M-5M,"Craftsmen, merchants & small business owner",2-5,0
+124,ARG17.jpg,M,66,65+,Argentina,Americas,1M-5M,Liberal profession and intellectual occupation,5+,2-5
+125,ARG18.jpg,F,51,50-65,Argentina,Americas,100k-1M,Teacher,5+,2-5
+126,ARG19.jpg,F,68,65+,Argentina,Americas,100k-1M,Artist,0-2,0
+127,USA03.jpg,F,24,15-25,United States of America,Americas,5M+,Liberal profession and intellectual occupation,2-5,0
+128,ARG20.jpg,F,49,35-50,Argentina,Americas,5-15k,"Craftsmen, merchants & small business owner",0-2,2-5
+129,BOL01.jpg,M,78,65+,Bolivia (Plurinational State of),Americas,100k-1M,Liberal profession and intellectual occupation,5+,2-5
+130,ARG21.jpg,F,9,0-15,Argentina,Americas,100k-1M,Kid,0-2,0
+131,ARG22.jpg,F,41,35-50,Argentina,Americas,100k-1M,Worker,0-2,5+
+132,ARG23.jpg,M,43,35-50,Argentina,Americas,100k-1M,Liberal profession and intellectual occupation,5+,2-5
+133,BOL02.jpg,F,33,25-35,Bolivia (Plurinational State of),Americas,100k-1M,Executive,2-5,0
+134,SCO02.jpg,F,11,0-15,United Kingdom of Great Britain and Northern Ireland,Europe,100k-1M,Kid,0-2,0
+135,SCO03.jpg,F,7,0-15,United Kingdom of Great Britain and Northern Ireland,Europe,100k-1M,Kid,0-2,0
+136,BOL03.jpg,M,8,0-15,Bolivia (Plurinational State of),Americas,100k-1M,Kid,0-2,0
+137,BOL04.jpg,M,11,0-15,Bolivia (Plurinational State of),Americas,100k-1M,Kid,0-2,0
+138,BOL05.jpg,M,64,50-65,Bolivia (Plurinational State of),Americas,100k-1M,Retiree,2-5,2-5
+139,BOL06.jpg,M,41,35-50,Bolivia (Plurinational State of),Americas,100k-1M,Liberal profession and intellectual occupation,2-5,2-5
+140,PER02.jpg,F,40,35-50,Peru,Americas,100k-1M,Religious,0-2,0
+141,ESP11.jpg,F,73,65+,Spain,Europe,100k-1M,Retiree,5+,2-5
+142,BOL07.jpg,F,30,25-35,Bolivia (Plurinational State of),Americas,1M-5M,Employee,0-2,1
+143,BOL08.jpg,F,30,25-35,Bolivia (Plurinational State of),Americas,1M-5M,Employee,0-2,0
+144,BOL09.jpg,M,45,35-50,Bolivia (Plurinational State of),Americas,5-15k,Worker,0-2,2-5
+145,IT02.jpg,M,30,25-35,Italy,Europe,100k-1M,Executive,2-5,1
+146,FR067.jpg,F,61,50-65,France,Europe,100k-1M,Teacher,2-5,2-5
+147,BOL10.jpg,M,10,0-15,Bolivia (Plurinational State of),Americas,0-5k,Kid,0-2,0
+148,BOL11.jpg,F,8,0-15,Bolivia (Plurinational State of),Americas,0-5k,Kid,0-2,0
+149,BOL12.jpg,M,32,25-35,Bolivia (Plurinational State of),Americas,0-5k,"Craftsmen, merchants & small business owner",0-2,2-5
+150,BOL13.jpg,F,28,25-35,Bolivia (Plurinational State of),Americas,0-5k,Employee,2-5,0
+151,IRN01.jpg,M,34,25-35,Iran (Islamic Republic of),Asia,5M+,Executive,5+,0
+152,PER03.jpg,F,24,15-25,Peru,Americas,5M+,Executive,2-5,0
+153,PER04.jpg,F,55,50-65,Peru,Americas,100k-1M,Teacher,2-5,0
+154,BRE02.jpg,M,50,35-50,Brazil,Americas,5M+,Liberal profession and intellectual occupation,0-2,2-5
+155,CAN02.jpg,F,9,0-15,Canada,Americas,5M+,Kid,0-2,0
+156,BRE03.jpg,F,36,35-50,Brazil,Americas,5M+,Worker,0-2,1
+157,TTO01.jpg,F,11,0-15,Trinidad and Tobago,Americas,5M+,Kid,0-2,0
+158,POR01.jpg,F,69,65+,Portugal,Europe,15-100k,Retiree,5+,1
+159,BRE04.jpg,F,7,0-15,Brazil,Americas,1M-5M,Kid,0-2,0
+160,BRE05.jpg,M,51,50-65,Brazil,Americas,5M+,Worker,0-2,0
+161,BRE06.jpg,M,42,35-50,Brazil,Americas,5M+,Not paid occupation,2-5,0
+162,BRE07.jpg,M,44,35-50,Brazil,Americas,0-5k,Worker,0-2,0
+163,BRE08.jpg,M,60,50-65,Brazil,Americas,5M+,Executive,0-2,2-5
+164,BRE09.jpg,F,42,35-50,Brazil,Americas,1M-5M,Liberal profession and intellectual occupation,5+,0
+165,BRE10.jpg,F,74,65+,Brazil,Americas,1M-5M,Retiree,2-5,2-5
+166,BRE11.jpg,M,64,50-65,Brazil,Americas,5M+,Teacher,5+,0
+167,BRE12.jpg,M,55,50-65,Brazil,Americas,15-100k,"Craftsmen, merchants & small business owner",0-2,2-5
+168,BRE13.jpg,M,40,35-50,Brazil,Americas,15-100k,Artist,0-2,2-5
+169,BRE14.jpg,M,20,15-25,Brazil,Americas,15-100k,Artist,0-2,0
+170,COL01.jpg,M,45,35-50,Colombia,Americas,0-5k,Farmer,0-2,2-5
+171,COL02.jpg,M,23,15-25,Colombia,Americas,0-5k,Farmer,2-5,0
+172,COL03.jpg,M,50,35-50,Colombia,Americas,0-5k,Farmer,5+,2-5
+173,COL04.jpg,F,70,65+,Colombia,Americas,0-5k,Not paid occupation,0-2,2-5
+174,COL05.jpg,M,25,15-25,Colombia,Americas,0-5k,Worker,0-2,1
+175,COL06.jpg,M,30,25-35,Colombia,Americas,5M+,Executive,2-5,0
+176,COL07.jpg,M,46,35-50,Colombia,Americas,100k-1M,Worker,0-2,2-5
+177,COL08.jpg,F,43,35-50,Colombia,Americas,5M+,Not paid occupation,0-2,0
+178,COL09.jpg,F,31,25-35,Colombia,Americas,5M+,Teacher,5+,1
+179,COL10.jpg,M,28,25-35,Colombia,Americas,15-100k,Farmer,5+,0
+180,COL11.jpg,F,50,35-50,Colombia,Americas,5M+,Liberal profession and intellectual occupation,5+,0
+181,COL12.jpg,M,32,25-35,Colombia,Americas,5M+,Liberal profession and intellectual occupation,5+,0
+182,USA04.jpg,M,28,25-35,United States of America,Americas,1M-5M,Employee,0-2,2-5
+183,USA05.jpg,M,34,25-35,United States of America,Americas,1M-5M,Executive,2-5,0
+184,USA06.jpg,M,19,15-25,United States of America,Americas,1M-5M,Student,2-5,0
+185,USA07.jpg,F,36,35-50,United States of America,Americas,1M-5M,Employee,5+,2-5
+186,USA08.jpg,M,42,35-50,United States of America,Americas,1M-5M,"Craftsmen, merchants & small business owner",2-5,2-5
+187,USA09.jpg,M,67,65+,United States of America,Americas,1M-5M,Executive,5+,2-5
+188,USA10.jpg,F,30,25-35,United States of America,Americas,100k-1M,Employee,2-5,0
+189,USA11.jpg,M,46,35-50,United States of America,Americas,100k-1M,Artist,2-5,0
+190,USA12.jpg,F,7,0-15,United States of America,Americas,1M-5M,Kid,0-2,0
+191,USA13.jpg,F,40,35-50,United States of America,Americas,100k-1M,"Craftsmen, merchants & small business owner",2-5,0
+192,USA14.jpg,F,49,35-50,United States of America,Americas,100k-1M,Artist,2-5,2-5
+193,USA15.jpg,M,59,50-65,United States of America,Americas,100k-1M,Retiree,5+,2-5
+194,USA16.jpg,F,14,0-15,United States of America,Americas,100k-1M,Kid,0-2,0
+195,USA17.jpg,F,9,0-15,United States of America,Americas,100k-1M,Kid,0-2,0
+196,USA18.jpg,M,10,0-15,United States of America,Americas,100k-1M,Kid,0-2,0
+197,USA19.jpg,M,35,25-35,United States of America,Americas,100k-1M,Artist,2-5,0
+198,USA20.jpg,M,7,0-15,United States of America,Americas,100k-1M,Kid,0-2,0
+199,USA21.jpg,M,30,25-35,United States of America,Americas,100k-1M,Employee,2-5,0
+200,USA22.jpg,F,26,25-35,United States of America,Americas,5-15k,Artist,0-2,0
+201,USA23.jpg,M,44,35-50,United States of America,Americas,100k-1M,Teacher,2-5,2-5
+202,USA24.jpg,M,37,35-50,United States of America,Americas,1M-5M,Liberal profession and intellectual occupation,0-2,2-5
+203,USA25.jpg,M,66,65+,United States of America,Americas,100k-1M,Artist,2-5,0
+204,USA26.jpg,M,30,25-35,United States of America,Americas,100k-1M,Artist,0-2,0
+205,USA27.jpg,F,27,25-35,United States of America,Americas,100k-1M,Liberal profession and intellectual occupation,2-5,0
+206,USA28.jpg,F,26,25-35,United States of America,Americas,5M+,Executive,2-5,0
+207,FR068.jpg,F,5,0-15,France,Europe,5M+,Kid,0-2,0
+208,FR052.jpg,F,8,0-15,France,Europe,5M+,Kid,0-2,0
+209,FR053.jpg,F,29,25-35,France,Europe,5M+,Liberal profession and intellectual occupation,2-5,0
+210,USA29.jpg,M,41,35-50,United States of America,Americas,15-100k,Artist,2-5,2-5
+211,USA30.jpg,F,41,35-50,United States of America,Americas,15-100k,Liberal profession and intellectual occupation,2-5,2-5
+212,USA31.jpg,M,38,35-50,United States of America,Americas,15-100k,Worker,0-2,0
+213,SYR07.jpg,M,39,35-50,Syrian Arab Republic,Asia,15-100k,Liberal profession and intellectual occupation,2-5,1
+214,USA32.jpg,F,30,25-35,United States of America,Americas,100k-1M,Artist,5+,0
+215,USA33.jpg,F,34,25-35,United States of America,Americas,100k-1M,Liberal profession and intellectual occupation,2-5,0
+216,USA34.jpg,F,28,25-35,United States of America,Americas,100k-1M,Liberal profession and intellectual occupation,2-5,0
+217,USA35.jpg,F,22,15-25,United States of America,Americas,100k-1M,Student,0-2,0
+218,USA36.jpg,F,57,50-65,United States of America,Americas,5M+,Artist,5+,0
+219,CHN02.jpg,F,33,25-35,China,Asia,5M+,Executive,5+,0
+220,ALL01.jpg,M,31,25-35,Germany,Europe,5M+,Liberal profession and intellectual occupation,5+,0
+221,ALL02.jpg,F,31,25-35,Germany,Europe,5M+,Not paid occupation,5+,0
+222,USA37.jpg,F,30,25-35,United States of America,Americas,5M+,Executive,5+,0
+223,USA38.jpg,F,24,15-25,United States of America,Americas,5M+,Liberal profession and intellectual occupation,5+,0
+224,FR054.jpg,M,36,35-50,France,Europe,1M-5M,Executive,2-5,1
+225,FR055.jpg,M,27,25-35,France,Europe,1M-5M,Liberal profession and intellectual occupation,2-5,0
+226,FR056.jpg,M,59,50-65,France,Europe,1M-5M,Liberal profession and intellectual occupation,2-5,2-5
+227,AUS02.jpg,M,29,25-35,Australia,Oceania,5M+,Artist,2-5,0
+228,SYR08.jpg,M,13,0-15,Syrian Arab Republic,Asia,1M-5M,Kid,0-2,0
+229,SYR09.jpg,M,10,0-15,Syrian Arab Republic,Asia,1M-5M,Kid,0-2,0
+230,SYR10.jpg,M,6,0-15,Syrian Arab Republic,Asia,1M-5M,Kid,0-2,0
+231,EN10.jpg,F,9,0-15,Kosovo (Republic of),Europe,5M+,Kid,0-2,0
+232,EN11.jpg,F,9,0-15,United Kingdom of Great Britain and Northern Ireland,Europe,5M+,Kid,0-2,0
+233,EN12.jpg,F,10,0-15,United Kingdom of Great Britain and Northern Ireland,Europe,5M+,Kid,0-2,0
+234,ROM01.jpg,M,11,0-15,Romania,Europe,5M+,Kid,0-2,0
+235,EN13.jpg,M,10,0-15,Kosovo (Republic of),Europe,5M+,Kid,0-2,0
+236,EN14.jpg,M,10,0-15,United Kingdom of Great Britain and Northern Ireland,Europe,5M+,Kid,0-2,0
+237,EN15.jpg,F,11,0-15,United Kingdom of Great Britain and Northern Ireland,Europe,5M+,Kid,0-2,0
+238,HUN01.jpg,F,11,0-15,Hungary,Europe,5M+,Kid,0-2,0
+239,EN16.jpg,M,11,0-15,United Kingdom of Great Britain and Northern Ireland,Europe,5M+,Kid,0-2,0
+240,EN17.jpg,F,11,0-15,United Kingdom of Great Britain and Northern Ireland,Europe,5M+,Kid,0-2,0
+241,EN18.jpg,M,11,0-15,Lebanon,Asia,5M+,Kid,0-2,0
+242,MAR01.jpg,F,11,0-15,Morocco,Africa,5M+,Kid,0-2,0
+243,EN19.jpg,F,11,0-15,United Kingdom of Great Britain and Northern Ireland,Europe,5M+,Kid,0-2,0
+244,EN20.jpg,F,11,0-15,Pakistan,Asia,5M+,Kid,0-2,0
+245,EN21.jpg,F,7,0-15,United Kingdom of Great Britain and Northern Ireland,Europe,5M+,Kid,0-2,0
+246,EN22.jpg,F,7,0-15,United Kingdom of Great Britain and Northern Ireland,Europe,5M+,Kid,0-2,0
+247,EN23.jpg,F,9,0-15,United Kingdom of Great Britain and Northern Ireland,Europe,5M+,Kid,0-2,0
+248,EN24.jpg,M,8,0-15,United Kingdom of Great Britain and Northern Ireland,Europe,5M+,Kid,0-2,0
+249,AUS03.jpg,F,6,0-15,Australia,Oceania,5M+,Kid,0-2,0
+250,EN25.jpg,M,7,0-15,United Kingdom of Great Britain and Northern Ireland,Europe,5M+,Kid,0-2,0
+251,RUS02.jpg,M,6,0-15,Russian Federation,Europe,5M+,Kid,0-2,0
+252,RUS03.jpg,F,10,0-15,Russian Federation,Europe,5M+,Kid,0-2,0
+253,RUS04.jpg,F,9,0-15,Russian Federation,Europe,5M+,Kid,0-2,0
+254,RUS05.jpg,F,31,25-35,Russian Federation,Europe,5M+,Executive,2-5,0
+255,AZ01.jpg,F,24,15-25,Azerbaijan,Asia,5M+,Liberal profession and intellectual occupation,2-5,0
+256,RUS06.jpg,M,44,35-50,Russian Federation,Europe,5M+,"Craftsmen, merchants & small business owner",5+,1
+257,RUS07.jpg,F,76,65+,Russian Federation,Europe,5M+,Retiree,5+,1
+258,RUS08.jpg,M,39,35-50,Russian Federation,Europe,5M+,Artist,5+,1
+259,OUZ01.jpg,F,48,35-50,Uzbekistan,Asia,5M+,Worker,0-2,2-5
+260,RUS09.jpg,M,26,25-35,Russian Federation,Europe,5M+,Employee,2-5,0
+261,RUS10.jpg,F,33,25-35,Russian Federation,Europe,5M+,Liberal profession and intellectual occupation,2-5,0
+262,RUS11.jpg,F,31,25-35,Russian Federation,Europe,5M+,Liberal profession and intellectual occupation,5+,0
+263,GE01.jpg,F,26,25-35,Georgia,Asia,1M-5M,Liberal profession and intellectual occupation,2-5,0
+264,GE02.jpg,F,26,25-35,Georgia,Asia,5M+,Liberal profession and intellectual occupation,2-5,0
+265,RUS12.jpg,F,27,25-35,Russian Federation,Europe,100k-1M,Employee,5+,1
+266,TR08.jpg,M,23,15-25,Turkey,Asia,5M+,Student,2-5,0
+267,RUS13.jpg,F,28,25-35,Russian Federation,Europe,0-5k,"Craftsmen, merchants & small business owner",2-5,0
+268,MN01.jpg,M,54,50-65,Mongolia,Asia,0-5k,Farmer,0-2,2-5
+269,MN02.jpg,M,61,50-65,Mongolia,Asia,0-5k,Worker,0-2,2-5
+270,KOR01.jpg,F,36,35-50,Republic of Korea,Asia,5M+,Teacher,2-5,0
+271,MN03.jpg,F,24,15-25,Mongolia,Asia,1M-5M,Student,2-5,0
+272,MN04.jpg,M,28,25-35,Mongolia,Asia,1M-5M,Worker,0-2,0
+273,MN05.jpg,M,28,25-35,Mongolia,Asia,1M-5M,Liberal profession and intellectual occupation,2-5,0
+274,CAM01.jpg,F,47,35-50,Cameroon,Africa,1M-5M,Religious,2-5,0
+275,TW01.jpg,F,20,15-25,Taiwan (Republic of China),Asia,1M-5M,Student,2-5,0
+276,CHN03.jpg,F,31,25-35,China,Asia,1M-5M,Religious,2-5,0
+277,MN06.jpg,F,7,0-15,Mongolia,Asia,1M-5M,Kid,0-2,0
+278,MN07.jpg,F,9,0-15,Mongolia,Asia,1M-5M,Kid,0-2,0
+279,MN08.jpg,F,24,15-25,Mongolia,Asia,1M-5M,Student,2-5,0
+280,MN09.jpg,F,53,50-65,Mongolia,Asia,1M-5M,Teacher,5+,2-5
+281,MN10.jpg,F,58,50-65,Mongolia,Asia,1M-5M,Employee,2-5,2-5
+282,MN11.jpg,F,46,35-50,Mongolia,Asia,1M-5M,"Craftsmen, merchants & small business owner",2-5,1
+283,MN12.jpg,F,30,25-35,Mongolia,Asia,1M-5M,Not paid occupation,2-5,2-5
+284,MN13.jpg,F,40,35-50,Mongolia,Asia,1M-5M,Teacher,0-2,2-5
+285,MN14.jpg,M,28,25-35,Mongolia,Asia,1M-5M,Employee,0-2,1
+286,AFG02.jpg,M,26,25-35,Afghanistan,Asia,1M-5M,Student,2-5,0
+287,YEM01.jpg,M,34,25-35,Yemen,Asia,1M-5M,Not paid occupation,2-5,1
+288,MN15.jpg,F,45,35-50,Mongolia,Asia,1M-5M,Liberal profession and intellectual occupation,0-2,2-5
+289,SG01.jpg,F,25,15-25,Singapore,Asia,5M+,Liberal profession and intellectual occupation,2-5,0
+290,SG02.jpg,M,27,25-35,Singapore,Asia,5M+,Employee,2-5,0
+291,PH01.jpg,F,28,25-35,Philippines,Asia,5M+,Teacher,5+,0
+292,SG03.jpg,F,29,25-35,Singapore,Asia,5M+,Liberal profession and intellectual occupation,0-2,0
+293,SG04.jpg,M,26,25-35,Singapore,Asia,5M+,Executive,2-5,0
+294,SG05.jpg,F,33,25-35,Singapore,Asia,5M+,Executive,5+,0
+295,SG06.jpg,F,29,25-35,Singapore,Asia,5M+,Executive,5+,0
+296,IND02.jpg,F,36,35-50,India,Asia,5M+,Executive,2-5,1
+297,MN16.jpg,F,6,0-15,Mongolia,Asia,1M-5M,Kid,0-2,0
+298,MYN01.jpg,M,32,25-35,Myanmar,Asia,5M+,Liberal profession and intellectual occupation,2-5,0
+299,MYN02.jpg,M,33,25-35,Myanmar,Asia,5M+,Worker,0-2,0
+300,CAN03.jpg,M,54,50-65,Canada,Americas,5M+,Liberal profession and intellectual occupation,5+,2-5
+301,MYN03.jpg,F,25,15-25,Myanmar,Asia,5M+,Executive,2-5,0
+302,IND03.jpg,M,46,35-50,India,Asia,5M+,Executive,5+,1
+303,MYN04.jpg,F,24,15-25,Myanmar,Asia,5M+,Executive,2-5,0
+304,MYN05.jpg,M,26,25-35,Myanmar,Asia,5M+,Student,2-5,0
+305,MYN06.jpg,F,18,15-25,Myanmar,Asia,5M+,Student,0-2,0
+306,IDN02.jpg,F,34,25-35,Indonesia,Asia,5M+,Teacher,2-5,0
+307,IDN03.jpg,M,41,35-50,Indonesia,Asia,5M+,Employee,2-5,0
+308,IDN04.jpg,M,13,0-15,Indonesia,Asia,5M+,Kid,0-2,0
+309,MYN07.jpg,M,31,25-35,Myanmar,Asia,5M+,Teacher,5+,0
+310,MYN08.jpg,M,24,15-25,Myanmar,Asia,5M+,Executive,2-5,0
+311,MYN09.jpg,F,30,25-35,Myanmar,Asia,5M+,Teacher,2-5,0
+312,MYN10.jpg,M,47,35-50,Myanmar,Asia,5M+,Religious,2-5,0
+313,MYN11.jpg,M,26,25-35,Myanmar,Asia,0-5k,Student,0-2,0
+314,MYN12.jpg,M,55,50-65,Myanmar,Asia,5M+,Liberal profession and intellectual occupation,0-2,2-5
+315,ALL03.jpg,M,48,35-50,Germany,Europe,5M+,Liberal profession and intellectual occupation,2-5,1
+316,MYN13.jpg,F,24,15-25,Myanmar,Asia,1M-5M,Teacher,2-5,0
+317,MYN14.jpg,F,22,15-25,Myanmar,Asia,0-5k,Student,0-2,0
+318,IND04.jpg,M,33,25-35,India,Asia,100k-1M,Employee,0-2,2-5
+319,IND05.jpg,F,83,65+,India,Asia,100k-1M,Not paid occupation,0-2,2-5
+320,IND06.jpg,F,53,50-65,India,Asia,100k-1M,Teacher,5+,1
+321,IND07.jpg,F,32,25-35,India,Asia,100k-1M,Worker,0-2,2-5
+322,IND08.jpg,M,37,35-50,India,Asia,100k-1M,Worker,0-2,5+
+323,IND09.jpg,M,35,25-35,India,Asia,100k-1M,Worker,0-2,2-5
+324,IND10.jpg,F,23,15-25,India,Asia,0-5k,Worker,0-2,0
+325,IND11.jpg,M,37,35-50,India,Asia,100k-1M,Liberal profession and intellectual occupation,2-5,2-5
+326,IND12.jpg,M,43,35-50,India,Asia,100k-1M,Executive,2-5,2-5
+327,IND13.jpg,M,36,35-50,India,Asia,100k-1M,Executive,2-5,2-5
+328,IND14.jpg,F,41,35-50,India,Asia,100k-1M,Not paid occupation,5+,1
+329,IND15.jpg,F,32,25-35,India,Asia,100k-1M,Employee,2-5,1
+330,USA39.jpg,F,35,25-35,United States of America,Americas,1M-5M,Liberal profession and intellectual occupation,2-5,0
+331,IND16.jpg,F,17,15-25,India,Asia,100k-1M,Student,0-2,0
+332,IND17.jpg,M,19,15-25,India,Asia,100k-1M,Student,0-2,0
+333,IND18.jpg,F,19,15-25,India,Asia,100k-1M,Student,0-2,0
+334,IND19.jpg,F,19,15-25,India,Asia,100k-1M,Student,0-2,0
+335,IND20.jpg,F,18,15-25,India,Asia,100k-1M,Student,0-2,0
+336,IND21.jpg,M,20,15-25,India,Asia,100k-1M,Student,0-2,0
+337,IND22.jpg,F,18,15-25,India,Asia,100k-1M,Student,0-2,0
+338,IND23.jpg,F,18,15-25,India,Asia,100k-1M,Student,0-2,0
+339,IND24.jpg,F,20,15-25,India,Asia,100k-1M,Student,0-2,0
+340,IND25.jpg,F,20,15-25,India,Asia,100k-1M,Student,0-2,0
+341,IND26.jpg,F,18,15-25,India,Asia,100k-1M,Student,0-2,0
+342,IND27.jpg,M,18,15-25,India,Asia,100k-1M,Student,0-2,0
+343,IND28.jpg,F,18,15-25,India,Asia,100k-1M,Student,0-2,0
+344,IND29.jpg,F,18,15-25,India,Asia,100k-1M,Student,0-2,0
+345,IND30.jpg,F,20,15-25,India,Asia,1M-5M,Student,0-2,0
+346,IND31.jpg,M,18,15-25,India,Asia,1M-5M,Student,0-2,0
+347,IND32.jpg,M,22,15-25,India,Asia,1M-5M,Student,0-2,0
+348,IND33.jpg,F,20,15-25,India,Asia,1M-5M,Student,0-2,0
+349,IND34.jpg,F,16,15-25,India,Asia,1M-5M,Student,0-2,0
+350,IND35.jpg,F,21,15-25,India,Asia,1M-5M,Student,0-2,0
+351,IND36.jpg,M,21,15-25,India,Asia,1M-5M,Student,0-2,0
+352,IND37.jpg,F,18,15-25,India,Asia,1M-5M,Student,0-2,0
+353,IND38.jpg,F,20,15-25,India,Asia,1M-5M,Student,0-2,0
+354,FR057.jpg,M,24,15-25,France,Europe,1M-5M,Student,0-2,0
+355,FR058.jpg,M,29,25-35,France,Europe,1M-5M,Student,0-2,0
+356,IND39.jpg,F,30,25-35,India,Asia,100k-1M,Artist,5+,0
+357,IND40.jpg,M,43,35-50,India,Asia,100k-1M,Worker,0-2,2-5
+358,IND41.jpg,F,40,35-50,India,Asia,5M+,Executive,5+,0
+359,IND42.jpg,F,75,65+,India,Asia,1M-5M,Not paid occupation,2-5,2-5
+360,AUS04.jpg,F,34,25-35,Australia,Oceania,1M-5M,Not paid occupation,2-5,1
+361,IND43.jpg,M,27,25-35,India,Asia,1M-5M,"Craftsmen, merchants & small business owner",2-5,2-5
+362,NP01.jpg,F,33,25-35,Nepal,Asia,100k-1M,Not paid occupation,2-5,0
+363,NP02.jpg,M,50,35-50,Nepal,Asia,100k-1M,"Craftsmen, merchants & small business owner",0-2,2-5
+364,NP03.jpg,M,34,25-35,Nepal,Asia,100k-1M,Executive,5+,0
+365,NP04.jpg,F,15,0-15,Nepal,Asia,100k-1M,Student,0-2,0
+366,NP05.jpg,M,40,35-50,Nepal,Asia,100k-1M,Liberal profession and intellectual occupation,5+,0
+367,NP06.jpg,M,55,50-65,Nepal,Asia,100k-1M,Liberal profession and intellectual occupation,2-5,2-5
+368,NP07.jpg,F,34,25-35,Nepal,Asia,100k-1M,Worker,0-2,2-5
+369,NP08.jpg,M,44,35-50,Nepal,Asia,100k-1M,Farmer,0-2,2-5
+370,NP09.jpg,F,16,15-25,Nepal,Asia,100k-1M,Student,0-2,0
+371,NP10.jpg,M,30,25-35,Nepal,Asia,5-15k,Worker,5+,0
+372,NP11.jpg,M,31,25-35,Nepal,Asia,100k-1M,Teacher,2-5,2-5
+373,NP12.jpg,M,64,50-65,Nepal,Asia,5-15k,Farmer,0-2,0
+374,NP13.jpg,F,46,35-50,Nepal,Asia,5-15k,Farmer,0-2,2-5
+375,NP14.jpg,F,23,15-25,Nepal,Asia,5-15k,"Craftsmen, merchants & small business owner",0-2,0
+376,NP15.jpg,M,24,15-25,Nepal,Asia,5-15k,Farmer,0-2,1
+377,NP16.jpg,M,14,0-15,Nepal,Asia,5-15k,Student,0-2,0
+378,NP17.jpg,M,49,35-50,Nepal,Asia,5-15k,Farmer,0-2,2-5
+379,NP18.jpg,F,26,25-35,Nepal,Asia,5-15k,Not paid occupation,0-2,1
+380,NP19.jpg,M,48,35-50,Nepal,Asia,100k-1M,Liberal profession and intellectual occupation,2-5,0
+381,NP20.jpg,F,17,15-25,Nepal,Asia,100k-1M,Student,0-2,0
+382,IRN02.jpg,M,30,25-35,Iran (Islamic Republic of),Asia,5M+,Executive,2-5,0
+383,IRN03.jpg,F,27,25-35,Iran (Islamic Republic of),Asia,5M+,Liberal profession and intellectual occupation,5+,0
+384,AFG03.jpg,M,42,35-50,Afghanistan,Asia,5M+,Employee,0-2,2-5
+385,IRN04.jpg,M,32,25-35,Iran (Islamic Republic of),Asia,1M-5M,Liberal profession and intellectual occupation,2-5,1
+386,IRN05.jpg,M,23,15-25,Iran (Islamic Republic of),Asia,5M+,Artist,2-5,0
+387,IRN06.jpg,M,83,65+,Iran (Islamic Republic of),Asia,5M+,Liberal profession and intellectual occupation,5+,2-5
+388,IRN07.jpg,F,40,35-50,Iran (Islamic Republic of),Asia,5M+,Employee,2-5,0
+389,IRN08.jpg,F,26,25-35,Iran (Islamic Republic of),Asia,5M+,Teacher,2-5,0
+390,ALL04.jpg,F,31,25-35,Germany,Europe,1M-5M,Liberal profession and intellectual occupation,2-5,0
+391,IRN09.jpg,F,25,15-25,Iran (Islamic Republic of),Asia,5M+,Artist,2-5,0
+392,KEN01.jpg,F,30,25-35,Kenya,Africa,1M-5M,Worker,0-2,0
+393,ETH01.jpg,M,28,25-35,Ethiopia,Africa,1M-5M,Employee,2-5,0
+394,ETH02.jpg,M,67,65+,Ethiopia,Africa,1M-5M,Retiree,0-2,2-5
+395,IRN10.jpg,F,20,15-25,Iran (Islamic Republic of),Asia,5M+,Artist,2-5,0
+396,IRN11.jpg,M,23,15-25,Iran (Islamic Republic of),Asia,1M-5M,Student,2-5,0
+397,IRN12.jpg,M,36,35-50,Iran (Islamic Republic of),Asia,1M-5M,Religious,5+,2-5
+398,IRN13.jpg,M,73,65+,Iran (Islamic Republic of),Asia,5M+,Retiree,2-5,2-5
+399,IRN14.jpg,M,21,15-25,Iran (Islamic Republic of),Asia,5M+,Executive,0-2,0
+400,IRN15.jpg,F,25,15-25,Iran (Islamic Republic of),Asia,5M+,Liberal profession and intellectual occupation,5+,0
+401,IRN16.jpg,M,30,25-35,Iran (Islamic Republic of),Asia,5M+,Employee,5+,0
+402,IRN17.jpg,M,24,15-25,Iran (Islamic Republic of),Asia,5M+,Employee,2-5,0
+403,IRN18.jpg,M,25,15-25,Iran (Islamic Republic of),Asia,5M+,Liberal profession and intellectual occupation,2-5,0
+404,IRN19.jpg,M,57,50-65,Iran (Islamic Republic of),Asia,5M+,Worker,0-2,2-5
+405,IRN20.jpg,F,24,15-25,Iran (Islamic Republic of),Asia,5M+,Student,2-5,0
+406,ZIM01.jpg,M,54,50-65,Zimbabwe,Africa,100k-1M,Retiree,0-2,5+
+407,ZAM01.jpg,F,37,35-50,Zambia,Africa,1M-5M,Employee,2-5,2-5
+408,ETH03.jpg,M,23,15-25,Ethiopia,Africa,0-5k,Worker,0-2,0
+409,ETH04.jpg,F,30,25-35,Ethiopia,Africa,0-5k,Worker,0-2,0
+410,ETH05.jpg,M,54,50-65,Ethiopia,Africa,0-5k,Worker,0-2,0
+411,ETH06.jpg,F,45,35-50,Ethiopia,Africa,1M-5M,Executive,5+,0
+412,ETH07.jpg,M,36,35-50,Ethiopia,Africa,1M-5M,Farmer,2-5,1
+413,ETH08.jpg,M,49,35-50,Ethiopia,Africa,0-5k,Farmer,0-2,2-5
+414,ETH09.jpg,F,55,50-65,Ethiopia,Africa,0-5k,Farmer,0-2,2-5
+415,ZIM02.jpg,F,42,35-50,Zimbabwe,Africa,1M-5M,Executive,2-5,1
+416,ANG.jpg,F,31,25-35,Angola,Africa,1M-5M,Employee,5+,0
+417,ETH10.jpg,F,26,25-35,Ethiopia,Africa,1M-5M,Liberal profession and intellectual occupation,2-5,0
+418,ETH11.jpg,M,30,25-35,Ethiopia,Africa,1M-5M,Not paid occupation,0-2,0
+419,ETH12.jpg,F,35,25-35,Ethiopia,Africa,0-5k,Farmer,0-2,2-5
+420,ETH13.jpg,F,15,0-15,Ethiopia,Africa,0-5k,Student,0-2,0
+421,ETH14.jpg,M,51,50-65,Ethiopia,Africa,1M-5M,Religious,5+,2-5
+422,KEN02.jpg,F,39,35-50,Kenya,Africa,1M-5M,Executive,5+,2-5
+423,ETH15.jpg,M,24,15-25,Ethiopia,Africa,0-5k,Student,2-5,0
+424,ETH16.jpg,M,51,50-65,Ethiopia,Africa,1M-5M,Liberal profession and intellectual occupation,5+,2-5
+425,ETH17.jpg,M,25,15-25,Ethiopia,Africa,1M-5M,Executive,2-5,2-5
+426,ETH18.jpg,F,71,65+,Ethiopia,Africa,1M-5M,Religious,2-5,0
+427,FR059.jpg,M,56,50-65,France,Europe,1M-5M,Artist,2-5,2-5
+428,FR060.jpg,F,28,25-35,France,Europe,1M-5M,Artist,2-5,0
+429,FR061.jpg,F,31,25-35,France,Europe,1M-5M,Artist,2-5,0
+430,FR062.jpg,M,50,35-50,France,Europe,15-100k,Employee,2-5,1
+431,IND44.jpg,M,58,50-65,India,Asia,1M-5M,Liberal profession and intellectual occupation,2-5,2-5
+432,SG07.jpg,F,32,25-35,Singapore,Asia,5M+,Executive,2-5,0
+433,FR063.jpg,M,62,50-65,France,Europe,15-100k,Liberal profession and intellectual occupation,5+,2-5
+434,FR064.jpg,F,28,25-35,France,Europe,5-15k,Liberal profession and intellectual occupation,2-5,0
+435,FR065.jpg,M,57,50-65,France,Europe,1M-5M,Liberal profession and intellectual occupation,2-5,2-5
+436,FR066.jpg,M,63,50-65,France,Europe,1M-5M,Not paid occupation,0-2,0

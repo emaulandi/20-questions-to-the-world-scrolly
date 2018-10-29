@@ -17,8 +17,22 @@
 
 		<div class="wrapper">
 			<div class="base-column text-column">
+				<!--
+				 <p>	{{ intro }} </p>
+				-->
 
-				<p>	{{ intro }} </p>
+				{{#each intro}}
+					<p>{{value}}</p>
+				{{/each}}
+
+				<div class="before-subtile"></div>
+
+				<h2> {{ part0title }} </h2>
+
+				{{#each part0paragraph}}
+					<p>{{value}}</p>
+				{{/each}}
+
 				<div class="before-subtile"></div>
 
 				<h2> {{ part1title }} </h2>
@@ -66,9 +80,13 @@
 					<p>{{value}}</p>
 				{{/each}}
 
-				<iframe width="600" height="400"
+				<iframe width="635" height="400"
 					src="https://www.youtube.com/embed/zdLCMAiuZDA">
 				</iframe>
+
+				{{#each part1outroAfterVideo}}
+					<p>{{value}}</p>
+				{{/each}}
 
 				<div class="before-subtile"></div>
 				<h2> {{ part2title }} </h2>
@@ -89,7 +107,7 @@
 			</figure>
 
 			<!--  step text   -->
-			<article>
+			<article id='article-2-people'>
 
 				{{#each part2article}}
 					<div class='step' data-index={{data-index}} data-step={{data-step}}>

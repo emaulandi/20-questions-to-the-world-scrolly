@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Libre+Franklin');
-@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,500,600,700,800');
 @import url('https://fonts.googleapis.com/css?family=Gaegu');
 
 html {
@@ -14,9 +14,14 @@ body {
 	margin: 0;
 }
 
-h1, h2, h3 {
+h1 {
+  font-family: 'Poppins', serif;
+  font-weight: 700;
+}
+
+h2, h3 {
 	font-family: 'Poppins', serif;
-	font-weight: bold;
+	font-weight: 600;
 }
 
 /* header style */
@@ -29,6 +34,10 @@ img.logo {
 	margin-bottom: 20px;*/
 	margin-top: 2rem;
 	margin-bottom: 1rem;
+}
+
+.footer {
+  margin-top: 3rem;
 }
 
 
@@ -115,7 +124,7 @@ h2 {
 
 	/*margin-top: 20px;*/
 	margin-top: 1rem;
-	margin-bottom: 2.5rem;
+	margin-bottom: 1rem;
 }
 
 .text-column-px {
@@ -133,7 +142,18 @@ h2 {
 	line-height: 1;
 }
 
+.legendCategory {
+  font-size: 10px;
+}
 
+.clusterLegend {
+  font-size: 14px;
+}
+
+rect {
+  stroke-width: 2px;
+  stroke: white;
+}
 
 /* footer style */
 

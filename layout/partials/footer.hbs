@@ -2,8 +2,11 @@
 
   <div class="wrapper wide">
     <div class="base-column text-column">
-      <h1> FOOTER </h1>
-      <p> I a am a footer</p>
+
+      {{#each footer}}
+        <p>{{value}}</p>
+      {{/each}}
+
     </div>
   </div>
 

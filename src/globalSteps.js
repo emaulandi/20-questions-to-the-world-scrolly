@@ -1,10 +1,12 @@
 // for watch and hot reload
 require('../index.html')
+require('./style/base.scss')
+
 import { drawMap, addVisitedCountriesCenter, drawMapCanva } from './mapsUtils';
 import { drawLineSteps, highlightCountriesStep, addNodesStep } from './countriesSteps';
-import { initializeSimulation, initializeForce, updateNetworkCountries, updateForce, forceXYbuilder, updateNetworkCountriesCanvas, updateNetworkPeople } from './forceUtils';
-import { chartCountries, chartPeople, centerX, centerY, forceStrength, countryColor, forceDataCountries, radius, nodesColor, genderCategory, ageCategory, occupationCategory, yNodes } from './constants';
-import { updateNodesClusterCenter, updateNodesClusterCenterCategory } from './people-steps';
+import { initializeSimulation, initializeForce, initializeForcePeople, updateNetworkCountries, updateForce, forceXYbuilder, updateNetworkCountriesCanvas, updateNetworkPeople } from './forceUtils';
+import { chartCountries, chartPeople, simulationPeople, centerX, centerY, forceStrength, countryColor, forceDataCountries, radius, nodesColor, categoriesList, categoriesAttribute, yNodes } from './constants';
+import { updateNodesClusterCenter, updateNodesClusterCenterCategory, generateCategoryStats, drawRectLayout, showStep, addNodesOnClick, highlightNodes } from './people-steps';
 
 import * as d3 from "d3";
 
@@ -63,7 +65,7 @@ let path = d3.geoPath().projection(proj);
 
 // Var for FORCE
 let simulationCountries = d3.forceSimulation();
-let simulationPeople = d3.forceSimulation();
+
 
 let forceDataPeople ;
 
@@ -124,25 +126,57 @@ const STEPpeople = {
 	'begin': () => {
 		console.log("-----------------begin");
 		// put the nodes at the center
-		updateNodesClusterCenter(simulationPeople, forceDataPeople, null, yNodes);
+		updateNodesClusterCenter(simulationPeople, forceDataPeople, null, chartPeople.svgProps.height/2);
 
+		// enable pointers on the map
+		d3.select("#article-2-people").classed("pointer-disabled", true);
+
+	},
+	'highlight': () => {
+		console.log("-----------------highlight");
+		highlightNodes("on");
+	},
+	'close-highlight': () => {
+		console.log("-----------------close");
+		highlightNodes("off");
 	},
 	'gender': () => {
 		console.log("-----------------gender");
-		updateNodesClusterCenterCategory(simulationPeople, chartPeople.svgProps, forceDataPeople, genderCategory, "Gender");
+		standardStepPeople(0)
 	},
 	'age': () => {
 		console.log("-----------------age");
-		updateNodesClusterCenterCategory(simulationPeople, chartPeople.svgProps, forceDataPeople, ageCategory, "AgeCategory");
+		standardStepPeople(1)
+	},
+	'kids': () => {
+		console.log("-----------------kids");
+		standardStepPeople(2)
+	},
+	'population': () => {
+		console.log("-----------------population");
+		standardStepPeople(3)
 	},
 	'occupation': () => {
 		console.log("-----------------occupation");
-		updateNodesClusterCenterCategory(simulationPeople, chartPeople.svgProps, forceDataPeople, occupationCategory, "Occupation type");
+		standardStepPeople(4)
+
 	},
 	'gather': () => {
-		console.log("-----------------occupation");
+		console.log("-----------------gather");
+
+		chartPeople.chartSel
+	    .selectAll(".clusterLegendGroup")
+	    .remove();
+
 		updateNodesClusterCenter(simulationPeople, forceDataPeople, chartPeople.svgProps.width/2, yNodes);
+		drawRectLayout();
+		addNodesOnClick(simulationPeople,forceDataPeople);
 	}
+}
+
+function standardStepPeople(categoryID){
+	updateNodesClusterCenterCategory(simulationPeople, chartPeople.svgProps, forceDataPeople, categoriesList[categoryID].array, categoriesAttribute[categoryID]);
+	//showStep(categoriesAttribute[categoryID]);
 }
 
 function handleStepEnter(stepper,step){
@@ -196,6 +230,7 @@ function initScroll() {
 			console.log('PEOPLE enter ' + d3.select(el).attr('data-index'));
 
 			handleStepEnter(STEPpeople,d3.select(el).attr('data-step'));
+
 		},
 		exit: el => {
 			console.log('PEOPLE exit : ' + d3.select(el).attr('data-index'));
@@ -208,13 +243,22 @@ function initScroll() {
 
 function initChart(){
 
+	console.log('init Chart');
+
+	// chart 1
 	svgSetUp(chartCountries.svgId, chartCountries.svgProps);
 
+	// draw responsive country on svg
 	drawMap(chartCountries.chartSel, visitedCountriesFeatures, path, countryColor);
 
+	// draw background countries on canvas
 	drawMapCanva(path,otherCountriesFeatures);
 
+	// chart 2
 	svgSetUp(chartPeople.svgId, chartPeople.svgProps);
+
+	// draw set of rectangles to displya propotion of people in different categories
+	//drawRectLayout();
 
 }
 
@@ -271,6 +315,7 @@ function loadDataPeople(){
 		forceDataPeople.forEach( (d) => {
 			d.centerX = chartPeople.svgProps.width/2 ;
 			d.centerY = -200;
+			d.r = radius;
 		});
 		/*
 		/ not working -> 404 not found
@@ -278,6 +323,9 @@ function loadDataPeople(){
 			console.log(err, res);
 		})
 		*/
+
+		generateCategoryStats(forceDataPeople);
+
 		resolve();
 
 	});
@@ -287,11 +335,11 @@ function initForce(){
 	console.log("intiForce");
 
 	//initializeSimulation(simulation, forceData, updateNetworkCountries);
-	initializeSimulation(simulationCountries, forceDataCountries, updateNetworkCountriesCanvas);
+	initializeSimulation("countries",simulationCountries, forceDataCountries, updateNetworkCountriesCanvas);
 
 	// do not append nodes if using Canvas
 
-	initializeSimulation(simulationPeople, forceDataPeople, updateNetworkPeople);
+	initializeSimulation("people",simulationPeople, forceDataPeople, updateNetworkPeople);
 
 	chartPeople.chartSel
 		.append("g")
@@ -320,19 +368,14 @@ function init(){
 		console.log("YOLOOO");
 		initScroll();
 		initChart();
+		console.log("fin YOLOOO");
 		initForce();
+
 
 	}, function(err) {
 		console.log(err);
 	});
-	/*
-	loadData().then(() => {
 
-		initScroll();
-		initChart();
-		initForce();
-	});
-	*/
 
 }
 
