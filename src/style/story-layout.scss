@@ -4,6 +4,11 @@ svg {
   z-index: 1;
 }
 
+#canva-1-countries {
+  /*background-color: #d8edf3;*/
+  background:url(../img/wave6.png) repeat;
+}
+
 canvas {
   position : absolute;
 }
@@ -13,6 +18,9 @@ canvas {
   margin: 1rem auto;
   /* background-color: #f4f4f4; */
   padding: 1rem;
+
+	justify-content:center;
+	align-items:center;
 }
 
 .scrolly article {
@@ -54,7 +62,7 @@ canvas {
   position: sticky;
   width: 100%;
   /*height: 50vh; */ /*Height of the figure zone */
-  background: #969696;
+  background: white/*#969696*/;
   margin: 0;
   top: 5vh; /* Graph position from the bottom */
   left: 0;

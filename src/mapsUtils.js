@@ -9,6 +9,9 @@ function drawMap(svg,data,path,colorFill) {
 	//console.log("Map Utils - Draw Map - svg",svg);
 	//console.log("Map Utils - Draw Map - data",data);
 
+	// at first, disable the hover on countries for people to focus on the story
+	svg.classed("pointer-disabled", true);
+
 	let mapSvg = svg.append("g")
 		.attr("class","mapGroup")
 
@@ -19,7 +22,7 @@ function drawMap(svg,data,path,colorFill) {
 				.attr("class", "mapItem")
 				.attr("d", path)
 				.attr("stroke","white")
-				.attr('stroke-width', '1')
+				.attr('stroke-width', '0.5')
 				.attr("fill", colorFill)
 				.on("mouseover", (d,i) => {
 
@@ -30,7 +33,7 @@ function drawMap(svg,data,path,colorFill) {
 				})
 				.on("mouseout", (d,i) => {
 					d3.select(d3.event.target)
-						.style("stroke-width",1);
+						.style("stroke-width",0.5);
 
 					hideTipCountry();
 				});
@@ -50,7 +53,7 @@ function drawMapCanva(path,features){
 	context.beginPath();
 	//geoGenerator({type: 'FeatureCollection', features: features})
 	context.fillStyle = countryColor;
-	context.lineWidth = '1';
+	context.lineWidth = '0.5';
   context.strokeStyle = 'white';
 
 	geoGenerator({type: 'FeatureCollection', features: features});

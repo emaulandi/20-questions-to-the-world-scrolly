@@ -2,7 +2,7 @@
 /* FORCE FUNCTION */
 /* ---------------------- */
 import * as d3 from "d3";
-import { radius,  nodePadding, forcePropsCluster, alpha, nodesColor, chartCountries, contextForce, forceDataCountries, chartPeople} from './constants';
+import { radius,  nodePadding, forcePropsCluster, alpha, nodesColor, chartCountries, contextForce, forceDataCountries, chartPeople, visitedCountries, simulationCountries} from './constants';
 
 let forceCollide = d3.forceCollide()
   .strength(.8)
@@ -122,6 +122,25 @@ function addNodeArrayToSimCanvas(simulation, nodeArray, forceData, chartSel){
 	restartForceCanvas(simulation, chartSel, forceData);
 }
 
+function deleteNodes(stepId){
+
+  //console.log("forceUtils - deleteNodes");
+
+	//update forceData : delete the last X nodes, X being the sum of people off all countries in the step
+	let x = visitedCountries
+    .filter((d) => {return d.stepIndex == stepId})
+    .map((d) => d.people)
+    .reduce((a, b) => { return a + b });
+  console.log(x);
+  console.log("forceUtils - deleteNodes - forceDataCountries.length " + forceDataCountries.length + ", x : " +x);
+
+	forceDataCountries.splice(forceDataCountries.length - x, x);
+
+	// update Canva
+	restartForceCanvas(simulationCountries, chartCountries.chartSel, forceDataCountries);
+}
+
+
 /*
 // Check if not used -> delete
 function cleanNodes(chartSel, forceData){
@@ -180,6 +199,7 @@ export {
   updateNetworkPeople,
   addNodeArrayToSim,
   addNodeArrayToSimCanvas,
+  deleteNodes,
   restartForce,
   updateNetworkCountriesCanvas,
   restartCollide

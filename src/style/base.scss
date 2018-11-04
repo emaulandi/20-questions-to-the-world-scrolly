@@ -19,7 +19,7 @@ h1 {
   font-weight: 700;
 }
 
-h2, h3 {
+h2 {
 	font-family: 'Poppins', serif;
 	font-weight: 600;
 }
@@ -40,21 +40,29 @@ img.logo {
   margin-top: 3rem;
 }
 
+.footer p {
+  color: grey;
+  font-family: 'Poppins', serif;
+  font-size: 1rem;
+}
+
 
 /* title style */
 h1 {
 	/*font-size: 70px;*/
-	font-size: 4.5rem;
-	color: white;
-	margin-bottom: 0
+  font-size: 4rem;
+  color: white;
+  text-shadow: 2px 2px #404040;
+  margin-bottom: 0;
 }
 
 h3 {
 	font-family: 'Gaegu', serif;
 	/*font-size: 40px;*/
-	margin-top: 2rem;
+	margin-top: 1rem;
 	margin-bottom: 1rem;
 	font-size: 2.5rem;
+  text-shadow: 2px 2px grey;
 	color: white;
 }
 
@@ -68,6 +76,31 @@ h3 {
 	width: 100%;
 	background-image: url("./../img/head.png");
 	background-repeat: repeat-x;
+}
+
+
+// HANDLING VIDEO BACKGROUND
+.title {
+  position: relative;
+}
+
+.title-text {
+  position: absolute;
+  bottom: 0;
+}
+
+
+.video {
+  position: relative;
+  width: 50rem;
+  height: auto;
+  z-index: -100;
+  margin-top: 2rem;
+}
+
+.img-content{
+  width: 40rem;
+  height: auto;
 }
 
 
@@ -89,6 +122,7 @@ h2 {
 }
 
 .wrapper {
+
 	/* Firefox */
     display: -moz-box;
     -moz-box-pack: center;
@@ -105,9 +139,21 @@ h2 {
     box-align: center;
 }
 
+.title-column{
+  line-height: 0.9;
+  max-width: 23rem;
+  margin-left: 1.4rem;
+}
+
+.subtitle-column{
+  max-width: 40rem;
+  margin-left: 1.4rem;
+}
+
 .base-column {
 	/*max-width: 600px;*/
 	max-width: 40rem;
+
 
 	/*margin-left: 25px;
 	margin-right: 25px;*/
@@ -138,9 +184,7 @@ h2 {
 	margin-bottom: 2.5rem;
 }
 
-.title-column{
-	line-height: 1;
-}
+
 
 .legendCategory {
   font-size: 10px;
@@ -175,3 +219,19 @@ rect {
 	padding: 8px;
 	text-align: center;
 }
+
+
+a.niceLink {
+	color: #595959;
+	background:lightgrey;
+	font-weight: bold;
+	padding: 1px 3px;
+}
+
+.niceLink:hover,  {
+	background: grey;
+	color: white;
+	text-decoration:none;
+}
+
+.niceLink, .niceLink:visited {text-decoration:none;}

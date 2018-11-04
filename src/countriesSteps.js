@@ -1,6 +1,6 @@
 import * as d3 from "d3";
-import { chartCountries, context, lineColor, standardDuration, drawLineDelay, colorCountriesPause, colorCenterPause, dotVisitedColor, centerX, centerY, forceDuration, tooltipCountries } from './constants';
-import { addNodeArrayToSim, addNodeArrayToSimCanvas } from './forceUtils';
+import { chartCountries, visitedCountries, context, lineColor, standardDuration, drawLineDelay, colorCountriesPause, colorCenterPause, countryColor, dotVisitedColor, centerX, centerY, forceDuration, tooltipCountries } from './constants';
+import { addNodeArrayToSim, addNodeArrayToSimCanvas, deleteNodes } from './forceUtils';
 
 
 
@@ -20,7 +20,7 @@ function drawLineSteps(chartCountries, visitedCountries, countriesStep, stepInde
 			if(i <= centerCountriesVisited.length - 2){
 				// draw a line between 2 points, given an array of coordinates @ mapsUtils.js
 				//console.log(centerCountriesVisited.slice(i,i+2));
-				drawLine(chartCountries.chartSel, centerCountriesVisited.slice(i,i+2), i);
+				drawLine(chartCountries.chartSel, centerCountriesVisited.slice(i,i+2), i, stepIndex);
 				//drawLineCanva(context, centerCountriesVisited.slice(i,i+2), i);
 			}
 		})
@@ -56,31 +56,17 @@ function colorCountries(svg,countriesNamesToDraw,countryHighlightColor){
 // delay is i +1 to let draw the line btw the last country of the precedent step, and the 1st country of the current step
 function drawCountriesCenter(svg,dataCenterCoordinates,fillColor, fillColorContour){
 	//console.log("drawCountriesCenter - dataCenterCoordinates",dataCenterCoordinates)
-	svg.selectAll(".dotVisited")
-		.data(dataCenterCoordinates)
-		.enter()
-			.append("circle")
-			.attr("class","dotVisitedContour")
-			.attr("class",(d) => {
-				//console.log("drawCountriesCenter - drawing : ", d.name);
-				return "c"+d.name; } )
-			.attr("cx", (d) => { return d.center[0] ; })
-			.attr("cy", (d) => { return d.center[1] ; })
-			.attr("r", 0)
-			.attr("fill", fillColorContour)
-			.transition()
-				.delay( (d,i) => { return (i+1)*(standardDuration + colorCenterPause) ; })
-				.duration(standardDuration*1.5)
-				.attr("r", 5);
 
-	svg.selectAll(".dotVisited")
+	svg.selectAll(".dotVisitedGroup")
 		.data(dataCenterCoordinates)
 		.enter()
 			.append("circle")
 			.attr("class","dotVisited")
+			/*
 			.attr("class",(d) => {
 				//console.log("drawCountriesCenter - drawing : ", d.name);
 				return "c"+d.name; } )
+				*/
 			.attr("cx", (d) => { return d.center[0] ; })
 			.attr("cy", (d) => { return d.center[1] ; })
 			.attr("r", 0)
@@ -136,7 +122,7 @@ function drawLineCanva(context, arrayCoordinates, idelay){
 
 }
 // draw a line between 2 points, given an array of coordinates
-function drawLine(svg,arrayCoordinates,idelay){
+function drawLine(svg,arrayCoordinates,idelay,step){
 
 	//console.log("countriesSteps - drawLine - arrayCoordinates",arrayCoordinates);
 	//console.log("countriesSteps - drawLine - svg",svg);
@@ -154,6 +140,7 @@ function drawLine(svg,arrayCoordinates,idelay){
 		.attr("y2", y1)
 		.attr("stroke", lineColor)
 		.attr("stroke-width", 3)
+		.attr("class", "line-"+step)
 		.attr("stroke-linecap", "round")
 		.attr("stroke-dasharray", "5,5")
 		//.attrs({ x1: x1, y1: y1, x2: x1, y2: y1})
@@ -216,15 +203,15 @@ function addNodesStep(simulation, chartCountries, countriesStep, stepIndex, forc
 	countriesStep.forEach((d,i) => {
 		//console.log("addNodesStep - d: ",d.name);
 		nodesArray[i] = new Array() ;
+
 		for (j=0; j< d.people; j++) {
 			nodesArray[i].push({
 				id: d.id + "-" + j.toString(),
 				x: d.center[0],
 				y: d.center[1],
 				centerX: xScaleCountry(d.id),
-				centerY: centerY
-				//centerX: centerX,
-				//centerY: centerY
+				centerY: centerY,
+				stepIndex: stepIndex
 			});
 		};
 	})
@@ -239,6 +226,52 @@ function addNodesStep(simulation, chartCountries, countriesStep, stepIndex, forc
 		}, delay + offset)
 		offset += delay;
 	});
+}
+
+function eraseStep(stepId,countriesOnly,nodesOnly, forceData){
+	if(countriesOnly){
+		unlight(stepId);
+		undrawLine(stepId);
+		eraseCenter(stepId);
+	}
+	else if (nodesOnly) {
+		//console.log("nodes only");
+		deleteNodes(stepId, forceData);
+	}
+	else {
+		unlight(stepId);
+		undrawLine(stepId);
+		eraseCenter(stepId);
+		deleteNodes(stepId, forceData);
+	}
+}
+
+function unlight(stepId) {
+	chartCountries.chartSel
+		.selectAll(".mapItem")
+			.filter( (d) => {
+				return d.stepIndex == stepId;
+			})
+			.transition()
+				.duration(standardDuration/2)
+				.attr("fill", (d,i) => {
+					return countryColor;
+				});
+}
+
+function undrawLine(stepId){
+	chartCountries.chartSel
+		.selectAll(".line-"+stepId)
+		.remove();
+}
+
+function eraseCenter(stepId){
+	chartCountries.chartSel
+		.selectAll(".dotVisited")
+			.filter( (d) => {
+				return d.stepIndex == stepId;
+			})
+			.remove();
 }
 
 function showTipCountry(d) {
@@ -269,4 +302,4 @@ function printCountry(v) {
 	*/
 }
 
-export { drawLineSteps, highlightCountriesStep, addNodesStep, showTipCountry, hideTipCountry };
+export { drawLineSteps, highlightCountriesStep, addNodesStep, showTipCountry, hideTipCountry, eraseStep };

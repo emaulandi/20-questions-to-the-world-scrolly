@@ -39,14 +39,17 @@ module.exports = {
       },
 			{
 				test: /\.html$/,
-				loader: "raw-loader"
+				loader: 'html-loader',
+				options: {
+				    attrs: ['image:xlink:href']
+				}
 			},
 			{
 	      test: /\.scss$/,
-	      use: ExtractTextPlugin.extract({
+	      use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
 	        fallback: 'style-loader',
 	        use: ['css-loader', 'sass-loader']
-	      })
+	      }))
 	    },
 			{
         test: /\.(png|jp(e*)g|svg)$/,
