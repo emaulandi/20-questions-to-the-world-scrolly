@@ -6,6 +6,9 @@ svg {
   /*background-color: #d8edf3;*/
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAALklEQVQYlWNgIBe8+Pnn/4uff/4TpQivYnRFWBXjUoSimJBVcDmCDocqJqQGDgBdnWg122kqUAAAAABJRU5ErkJggg==) repeat; }
 
+#chart-2-people {
+  background-color: #f2f2f2; }
+
 canvas {
   position: absolute; }
 
@@ -19,7 +22,7 @@ canvas {
 
 .scrolly article {
   padding: 0;
-  max-width: 30rem;
+  max-width: 32rem;
   margin: 0 auto;
   position: relative;
   /* pointer-events: none; */ }
