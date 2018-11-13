@@ -72,7 +72,7 @@ function drawCountriesCenter(svg,dataCenterCoordinates,fillColor, fillColorConto
 			.attr("r", 0)
 			.attr("fill", fillColor)
 			.transition()
-				.delay( (d,i) => { return (i+1)*(standardDuration + 200) ; })
+				.delay( (d,i) => { return (i+1)*(standardDuration + 100) ; })
 				.duration(standardDuration)
 				.attr("r", 3.5);
 }
@@ -293,7 +293,7 @@ function hideTipCountry() {
 }
 
 function printCountry(v) {
-	return "<h4>" + v.name + "</h4> " + "<br/>" + "<b>" + v.people + "</b> people interviewed";
+	return "<p class='tooltipHead'>" + v.name + "</p> " + "<br/>" + "<b>" + v.people + "</b> people interviewed" + "<br/>" +" in " + v.month;
 	/*
 		+ "<br/>" + "<b>#" + v.rank + "</b> on overall ranking"
 		+ "<br/> | tech #" + v.tech_rank + " | leadership #" + v.leadership_rank + " | "

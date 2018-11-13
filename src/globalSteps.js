@@ -6,7 +6,7 @@ import { drawMap, addVisitedCountriesCenter, drawMapCanva } from './mapsUtils';
 import { drawLineSteps, highlightCountriesStep, addNodesStep, eraseStep } from './countriesSteps';
 import { initializeSimulation, initializeForce, initializeForcePeople, updateNetworkCountries, updateForce, forceXYbuilder, updateNetworkCountriesCanvas, updateNetworkPeople } from './forceUtils';
 import { chartCountries, chartPeople, visitedCountries, simulationPeople, simulationCountries, centerX, centerY, forcePropsCluster, forceStrength, countryColor, forceDataCountries, radius, nodesColor, categoriesList, categoriesAttribute, yNodes } from './constants';
-import { updateNodesClusterCenter, updateNodesClusterCenterCategory, generateCategoryStats, drawRectLayout, showStep, addNodesOnClick, highlightNodes, unshowAllLegend } from './people-steps';
+import { updateNodesClusterCenter, updateNodesClusterCenterCategory, generateCategoryStats, drawRectLayout, showStep, addNodesOnClick, highlightNodes, unshowAllLegend, updateNodeColor } from './people-steps';
 
 import * as d3 from "d3";
 
@@ -168,41 +168,50 @@ function standardStepCountries(stepIndex){
 const STEPpeople = {
 	'begin': (type) => {
     console.log("-----------------begin");
+    d3.select("article").classed("pointer-disabled", true);
     if (type){
+
   		// put the nodes at the center
   		updateNodesClusterCenter(simulationPeople, forceDataPeople, null, chartPeople.svgProps.height/2);
 
-  		// enable pointers on the map
+  		// enable pointers
   		d3.select("#article-2-people").classed("pointer-disabled", true);
     }
 	},
 	'highlight': (type) => {
     console.log("-----------------highlight");
     if (type){
-  		highlightNodes("on");
+  		highlightNodes(422, "on", simulationPeople, forceDataPeople);
     }
     else {
-      STEPpeople['close-highlight'](1);
+      //STEPpeople['close-highlight'](1);
+      highlightNodes(422, "off", simulationPeople, forceDataPeople);
+      //highlightNodes(81, "off", simulationPeople, forceDataPeople);
     }
 	},
 	'close-highlight': (type) => {
     console.log("-----------------close");
     if (type){
-  		highlightNodes("off");
+  		highlightNodes(422, "off", simulationPeople, forceDataPeople);
+      highlightNodes(81, "on", simulationPeople, forceDataPeople);
     }
     else {
-      STEPpeople['highlight'](1);
+      //STEPpeople['highlight'](1);
+      highlightNodes(422, "on", simulationPeople, forceDataPeople);
+      highlightNodes(81, "off", simulationPeople, forceDataPeople);
     }
 	},
 	'gender': (type) => {
     console.log("-----------------gender");
     if (type){
+      highlightNodes(81, "off", simulationPeople, forceDataPeople);
   		standardStepPeople(0);
     }
     else {
       //delete cluster legends
       d3.selectAll(".clusterLegendGroup").remove();
       // updateForce to center in big cluster
+      highlightNodes(81, "on", simulationPeople, forceDataPeople);
       updateNodesClusterCenter(simulationPeople, forceDataPeople, chartPeople.svgProps.width/2, chartPeople.svgProps.height/2);
     }
 	},
@@ -212,7 +221,8 @@ const STEPpeople = {
   		standardStepPeople(1);
     }
     else {
-      STEPpeople['gender'](1);
+      //STEPpeople['gender'](1);
+      standardStepPeople(0);
     }
 	},
 	'kids': (type) => {
@@ -252,12 +262,14 @@ const STEPpeople = {
   		updateNodesClusterCenter(simulationPeople, forceDataPeople, chartPeople.svgProps.width/2, yNodes);
   		drawRectLayout();
   		addNodesOnClick(simulationPeople,forceDataPeople);
+      updateNodeColor("on");
     }
     else {
       // delete all legends
       unshowAllLegend();
       // move back to occupation layout
       STEPpeople['occupation'](1);
+      updateNodeColor("off");
     }
 	},
   'buffer': (type) => {
@@ -383,6 +395,7 @@ function loadDataCountries(){
 			c.name =  c.properties.ADMIN ;
 			c.people =  visitedCountries.find((u) => u.name == c.properties.ADMIN).people ;
 			c.stepIndex = visitedCountries.find((u) => u.name == c.properties.ADMIN).stepIndex ;
+      c.month = visitedCountries.find((u) => u.name == c.properties.ADMIN).month ;
 		})
 		visitedCountriesFeatures.sort((a,b) => a.id - b.id);
 
@@ -451,7 +464,8 @@ function initForce(){
 					.attr("r", radius)
 					//.style("stroke","white")
 					//.style("stroke-width",1)
-					.style("fill",nodesColor);
+					.style("fill", nodesColor);
+          // add != color here for picture or no pics yet
 
 }
 
@@ -464,12 +478,10 @@ function init(){
 		loadDataPeople()
 
 	]).then(() => {
-		console.log("YOLOOO");
+
 		initScroll();
 		initChart();
-		console.log("fin YOLOOO");
 		initForce();
-
 
 	}, function(err) {
 		console.log(err);

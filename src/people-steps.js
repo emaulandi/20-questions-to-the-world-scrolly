@@ -1,15 +1,16 @@
 import * as d3 from "d3";
 import { updateForce, restartCollide, restartForce } from './forceUtils';
-import { forcePropsCluster, alpha, chartPeople, categoriesAttribute, categoriesList, topBuffer, yNodes, alphaPeople, tooltipCountries, radius, simulationPeople, forceDataCountries, nodesColor } from './constants';
+import { forcePropsCluster, alpha, chartPeople, categoriesAttribute, categoriesList, topBuffer, yNodes, alphaPeople, tooltipCountries, radius, simulationPeople, nodesColor } from './constants';
 
-const imgPath = "img/";
+const imgPath = "img/square/";
 
 const leftBuffer = 150;
-const marginText = 10;
+const marginText = 30;
 
-const marginInnerSide = 20;
+const marginInnerSide = 5;
 const partHeight = (chartPeople.svgProps.height-topBuffer)/5;
-const rectHeight = 25;
+const partWidth = (chartPeople.svgProps.width-marginText)/5;
+const rectHeight = 20;
 
 let categoriesValue = [];
 let totalPeople;
@@ -22,10 +23,15 @@ const peopleDuration = 800;
 const bigR = 100;
 const bigNodeDuration = 950;
 const colorBigNode = "#f2f2f2";
+const colorNodeWithImg = "black";
 
 const durationLegend = 700;
 const delayLegend = 600;
 const clusterLegendPadding = 100;
+const timerAddImg = 1400;
+
+const rectColor = "#b3b3b3";
+const backgroudColor = colorBigNode;
 
 //scale for points 0 = 180px, 100 = 930px
 let xPxScale = d3.scaleLinear()
@@ -37,10 +43,18 @@ let xScale = d3.scaleLinear()
     .range([0,chartPeople.svgProps.width-marginInnerSide-(leftBuffer+marginInnerSide)])
     .domain([0,100]);
 
+let xScaleBlock = d3.scaleLinear()
+    .range([0,partWidth])
+    .domain([0,75]);
+
 // from pixel to % value
 let xInvertScale = d3.scaleLinear()
     .domain([0,chartPeople.svgProps.width-marginInnerSide-(leftBuffer+marginInnerSide)])
     .range([0,100]);
+
+let xInvertScaleBlock = d3.scaleLinear()
+    .domain([0,partWidth])
+    .range([0,75]);
 
 function drawRectLayout(){
 	//console.log("people-steps - generateCategoryStats - drawRectLayout");
@@ -89,6 +103,17 @@ function setUpText(){
   for (i=0; i<textCategoryItems.length; i++){
     textCategory.push(
       {
+				x: marginText + i*partWidth,
+				y: topBuffer,
+				categoriesAttribute: categoriesAttribute[i],
+				text: textCategoryItems[i]
+			}
+    );
+  }
+  /*
+  for (i=0; i<textCategoryItems.length; i++){
+    textCategory.push(
+      {
 				x: leftBuffer - marginText,
 				y: partHeight/2 + i*partHeight + topBuffer,
 				categoriesAttribute: categoriesAttribute[i],
@@ -96,6 +121,7 @@ function setUpText(){
 			}
     );
   }
+  */
 
   chartPeople.chartSel
     .append("g")
@@ -106,14 +132,37 @@ function setUpText(){
       .append("text")
       .attr("class", "textCategory")
       .attr("x", (d) => d.x)
-      .attr("y", (d) => d.y + rectHeight/4)
-      .attr("text-anchor", "end")
+      .attr("y", (d) => d.y /*+ rectHeight/4*/)
+      //.attr("text-anchor", "end")
+      .attr("text-anchor", "start")
       .text(function(d){return d.text})
 			.style("opacity",0)
       .transition()
         .delay( (d,i) => { return delayLegend*i })
         .duration(durationLegend)
           .style("opacity",1)
+}
+
+function getXlegend(i,j){
+  const mod = 6;
+  let x = marginText + i*partWidth;
+
+  if (j > mod){
+    x = marginText + i*partWidth + partWidth/2;
+  }
+
+  return x;
+}
+
+function getYlegend(j){
+  const mod = 6;
+  let y = topBuffer + j*rectHeight + rectHeight/4;
+
+  if (j> mod){
+    y = topBuffer + (j%mod)*rectHeight + rectHeight/4;
+  }
+
+  return y;
 }
 
 function generateTextLegend(legendArray){
@@ -124,9 +173,24 @@ function generateTextLegend(legendArray){
   legendArray.forEach( (row, i) => {
 
     row.forEach( (item, j) => {
-      width = xScale(item);
+      //width = xScale(item);
       x = lastX;
 
+      width = xScaleBlock(item);
+      legendCategory.push(
+        {
+          x: getXlegend(i,j)/*marginText + i*partWidth*/,
+          y: getYlegend(j)/*topBuffer + j*rectHeight + rectHeight/4*/,
+					width: width,
+					categoriesAttribute: categoriesAttribute[i],
+          categoryID: i,
+          category: categoriesList[i].array[j],
+          //get name of current item in category row (ex: "H" from GenderCategory)
+          text: shortenText(categoriesList[i].array[j], partWidth/2, 1)
+        }
+      );
+
+      /*
       legendCategory.push(
         {
           x: x,
@@ -138,6 +202,7 @@ function generateTextLegend(legendArray){
           text: categoriesList[i].array[j]
         }
       );
+      */
 
       lastX += width;
     });
@@ -165,9 +230,11 @@ function setUpTextLegend(){
       .enter()
       .append("text")
       .attr("class", "legendCategory")
-      .attr("x", (d) => d.x + d.width/2)
+      .attr("x", (d) => d.x + marginInnerSide)
+      //.attr("x", (d) => d.x + d.width/2)
       .attr("y", (d) => d.y + 3*rectHeight/5)
-      .attr("text-anchor", "middle")
+      //.attr("text-anchor", "middle")
+      .attr("text-anchor", "start")
 			/*
       .attr("transform", (d) => {
         return "rotate(-25," + d.x + "," + d.y +")";
@@ -176,11 +243,19 @@ function setUpTextLegend(){
 			.style("opacity",0)
       .text( (d) => {
 				let text = d.text;
+        /*
 				if (text.length > Math.round(d.width/chartPixel)){
 					text = shortenText(d.text, d.width, 0);
 				}
+        */
 				return text;
 			})
+      .on("mouseover", (d,i) => {
+        showTip(d,"stats");
+      })
+      .on("mouseout", (d,i) => {
+        hideTip();
+      })
       .transition()
         .delay( (d) => { return delayLegend * d.categoryID })
         .duration(durationLegend)
@@ -214,10 +289,26 @@ function generateRectVal(rectArray){
 
       //console.log("start lastX",lastX);
       //console.log("item",item);
-      width = xScale(item);
       //console.log("width",width);
+
+      //width = xScale(item);
+      width = xScaleBlock(item);
+
       x = lastX;
 
+      rectCategory.push(
+        {
+					x: getXlegend(i,j)/*marginText + i*partWidth*/,
+					y: getYlegend(j)/*topBuffer + j*rectHeight + rectHeight/4*/,
+					width: width,
+					height: rectHeight,
+					categoriesAttribute: categoriesAttribute[i],
+          categoryID : i,
+					category: categoriesList[i].array[j]
+				}
+      );
+
+      /*
       rectCategory.push(
         {
 					x: x,
@@ -229,6 +320,7 @@ function generateRectVal(rectArray){
 					category: categoriesList[i].array[j]
 				}
       );
+      */
 
       lastX += width;
 
@@ -255,12 +347,16 @@ function setupRectCategory(){
       .data(rectCategory)
       .enter()
       .append("rect")
-      .attr("class", (d) => "rectCategory " + d.category)
+      .attr("class", (d) => "rectCategory " + getClassItem(d.category))
       .attr("x", (d) => d.x)
-      .attr("y", (d) => d.y + + topBuffer)
+      .attr("y", (d) => d.y)
+      //.attr("x", (d) => d.x)
+      //.attr("y", (d) => d.y + topBuffer)
       .attr("width", (d) => d.width)
       .attr("height", (d) => d.height)
-      .style("fill", "grey")
+      .style("fill", rectColor)
+      .style("stroke-width", 3)
+      .style("stroke", backgroudColor)
 			.style("opacity",0)
       .on("mouseover", (d,i) => {
 
@@ -269,7 +365,7 @@ function setupRectCategory(){
           .style("stroke-width",3);
         */
 
-        showTipStats(d);
+        showTip(d,"stats");
       })
       .on("mouseout", (d,i) => {
 
@@ -277,7 +373,7 @@ function setupRectCategory(){
         d3.select(d3.event.target)
           .style("stroke-width",1);
         */
-        hideTipStats();
+        hideTip();
       })
       .transition()
         .delay( (d) => { return delayLegend * d.categoryID })
@@ -468,25 +564,54 @@ function unshowAllLegend(){
   d3.selectAll(".textGroup").remove();
 }
 
-function showTipStats(d) {
+function getNodeColor(imgName){
+  if (imgName == "soon.jpg"){
+    return nodesColor;
+  }
+  else{
+    return colorNodeWithImg;
+  }
+}
 
-	tooltipCountries.html(printStats(d))
-		.style("left", (d3.event.pageX + 10) + "px")
-		.style("top", (d3.event.pageY - 20) + "px");
+function updateNodeColor(type){
+  chartPeople.chartSel
+    .selectAll(".nodes")
+    .transition()
+      .duration(delayLegend)
+      .style("fill", (d,i) => {
+        if (type == "on") {
+          return getNodeColor(d.img);
+        }
+        else{
+          return nodesColor;
+        }
+      });
+}
 
+function showTip(d,type) {
+  if (type == "nodes"){
+    tooltipCountries.html(printNodes(d))
+  		.style("left", (d3.event.pageX + 10) + "px")
+  		.style("top", (d3.event.pageY - 20) + "px");
+  }
+  else{
+    tooltipCountries.html(printStats(d))
+  		.style("left", (d3.event.pageX + 10) + "px")
+  		.style("top", (d3.event.pageY - 20) + "px");
+  }
 	tooltipCountries.transition()
    		.duration(500)
    		.style("opacity", .9);
 }
 
-function hideTipStats() {
+function hideTip() {
 	tooltipCountries.transition()
 		.duration(500)
 		.style("opacity", 0);
 }
 
 function printStats(v) {
-	return "<b>" + /* v.categoriesAttribute + " : " +*/ v.category+ "</b> : " + xInvertScale(v.width) + " %";
+	return "<b>" + /* v.categoriesAttribute + " : " +*/ v.category+ "</b> : " + Math.round(xInvertScaleBlock(v.width),1) + " %";
 	/*
 		+ "<br/>" + "<b>#" + v.rank + "</b> on overall ranking"
 		+ "<br/> | tech #" + v.tech_rank + " | leadership #" + v.leadership_rank + " | "
@@ -495,39 +620,104 @@ function printStats(v) {
 	*/
 }
 
+function printNodes(v) {
+	return "<b>" +  v["First Name"] + "</b>, " + v.Age +  " years old from " + v.Country;
+}
+
 function roundDecimal(n){
   return Math.round( 100 * n * 10 ) / 10 ;
+}
+
+function getClassItem(item){
+  let text = "class" + shortenText(item, 70, 0);
+  let withoutplus = text.replace(/\W/,"");
+  /*
+  let aclass = "class" +  shortenText(item, 70, 0);
+  // delete the + that is not taken in a class name
+  let regex = '/+/i';
+  let withoutplus = aclass.replace(regex, '');
+  console.log("getClassItem - withoutplus", withoutplus);
+  */
+  return (withoutplus);
 }
 
 function addNodesOnClick(simulation,forceData) {
   console.log("peopleSteps -- addNodesOnClick");
   chartPeople.chartSel
-    .selectAll(".nodesItems")
+    .selectAll(".nodes")
+    .on("mouseover", (d,i) => {
+      showTip(d,"nodes");
+    })
+    .on("mouseout", (d,i) => {
+      hideTip();
+    })
     .on("click", (d,i) => {
+
+      //check if any other image & big radius is present - different from the one clicked => if yes delete them
       let target = d3.select(d3.event.target)
-      console.log("target.datum()",target.datum());
-      console.log("target.datum()['gender']",target.datum()['gender']);
+      console.log("target",target);
+
+      let oldOnes = forceData.filter( (e) => {
+        return (e.r == bigR) && (e.id != d.id);
+      });
+
+      if ( oldOnes.length != 0 ){
+        console.log("odOnes", oldOnes);
+
+        let oldNodeSelect = chartPeople.chartSel
+          .selectAll(".nodes")
+          .filter( (n) => {
+            return n.id == oldOnes[0].id ;
+          });
+
+        console.log("oldNodeSelect",oldNodeSelect);
+        updateRadius(oldNodeSelect, simulation, forceData);
+        offRectangles();
+        deleteImg();
+      }
+
+      // light on the rectangles
+      categoriesAttribute.forEach( (cat,i) => {
+        let category = d[cat];
+        d3.select("." + getClassItem(category))
+          .transition()
+          .duration(delayLegend)
+            .style("fill", categoriesList[i].color);
+      });
+
+      // update Radius of clicked node
       updateRadius(target, simulation, forceData);
-      // light up rect from datum -> in add Img handle the light off ?
-      console.log("d3.select(.M)",d3.select(".M"));
-      console.log("d3.select(.F)",d3.select(".F"));
-      d3.select("."+target.datum()['Gender'])
-        .style("fill", "red");
-      // show/delete img ?
+
+      // check in any case if the image is still there and delete it (because of the over)
+      if (d.r == bigR) {
+        deleteImg();
+        offRectangles();
+      }
+      else {
+        // add img when node position is stabilized
+        setTimeout(function() {
+          addImage(target, simulation, forceData);
+        }, timerAddImg);
+      }
+
+
+      //updateRadius(target, simulationPeople, forceDataPeople);
+
+
     });
 
 }
 
 function updateRadius(targetSelection, simulation, forceData){
 
-  //console.log("people-steps - generateCategoryStats - updateRadius");
+  //console.log("people-steps - updateRadius - targetSelection",targetSelection);
   targetSelection
     .transition()
     .ease(d3.easePolyInOut)
   	.duration(bigNodeDuration + 100)
     .style("fill", (d) => {
       if (d.r == radius) { return colorBigNode;}
-      else { return nodesColor;}
+      else { return getNodeColor(d.img);}
     })
     .tween('radius', (d) =>	{
 
@@ -539,6 +729,10 @@ function updateRadius(targetSelection, simulation, forceData){
       else {
         rEnd = radius;
         //d3.selectAll("image").remove();
+
+        //light off the rect
+        d3.selectAll(".rectCategory")
+          .style("fill", rectColor);
       }
 
       let it = d3.interpolate(d.r, rEnd);
@@ -551,14 +745,14 @@ function updateRadius(targetSelection, simulation, forceData){
       	targetSelection.attr('r', (datum) => {return datum.r;});
 
         restartCollide(simulation, 0.2);
-        if (initR != radius){
-          simulation.alpha(alpha).restart();
-        }
+        //if (initR != radius){
+          simulation.alpha(0.1).restart();
+        //}
       }
     });
 }
 
-function addImage(targetSelection){
+function addImage(targetSelection, simulation, forceData){
 
   console.log("people-steps - generateCategoryStats - addImage");
 
@@ -596,12 +790,20 @@ function addImage(targetSelection){
     .attr("width", bigR * 2 )
     .attr("transform","scale(2)")
     .attr("transform", "translate(" + (position[0]-bigR) + "," + (position[1]-bigR) +")" )
+    .on("mouseover", (d,i) => {
+      showTip(datum,"nodes");
+    })
+    .on("mouseout", (d,i) => {
+      hideTip();
+    })
     .on("click", () => {
 
-      deleteImg();
+      offRectangles();
 
-      const domNode = d3.selectAll(".nodes").filter( (d) => {return d.id == datum.id ;})
-      updateRadius(domNode);
+      //updateRadius(domNode);
+      updateRadius(targetSelection, simulation, forceData);
+
+      deleteImg();
 
     })
 }
@@ -617,19 +819,27 @@ function deleteImg(){
   d3.selectAll("#img-node").remove();
 }
 
-function highlightNodes(actionType){
+function offRectangles(){
+  //light off the rect
+  d3.selectAll(".rectCategory")
+    .transition()
+    .duration(delayLegend)
+      .style("fill", rectColor);
+}
+
+function highlightNodes(id, actionType, simulation, forceData){
 
   let node = chartPeople.chartSel
     .selectAll(".nodes")
-    .filter( (d) => { return d.id == 1 });
-  console.log(node);
+    .filter( (d) => { return d.id == id });
+  //console.log(node);
 
-  updateRadius(node, simulationPeople, forceDataCountries);
+  updateRadius(node, simulation, forceData);
 
   if (actionType == "on"){
     setTimeout(function() {
-      addImage(node);
-    }, 1400);
+      addImage(node, simulation, forceData);
+    }, timerAddImg);
 
   }
   else {
@@ -638,5 +848,5 @@ function highlightNodes(actionType){
 }
 
 export {
-  updateNodesClusterCenter, updateNodesClusterCenterCategory, generateCategoryStats, drawRectLayout, showStep, addNodesOnClick, highlightNodes, unshowAllLegend
+  updateNodesClusterCenter, updateNodesClusterCenterCategory, generateCategoryStats, drawRectLayout, showStep, addNodesOnClick, highlightNodes, unshowAllLegend, updateNodeColor
 }

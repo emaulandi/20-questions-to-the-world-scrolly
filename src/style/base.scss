@@ -4,9 +4,11 @@
 
 html {
   font-size: 100%;
+  /*
 	@media only screen and (max-device-width:480px) {
-		font-size:120%;
+		font-size:80%;
  	}
+  */
 }
 
 body {
@@ -81,12 +83,18 @@ h3 {
 
 // HANDLING VIDEO BACKGROUND
 .title {
-  position: relative;
+/*  position: relative; */
+  max-width: 960px;
+  margin: auto;
+  text-align: center;
 }
 
 .title-text {
   position: absolute;
-  bottom: 0;
+  padding-left: 80px;
+  padding-top: 20px;
+  text-align: left;
+  /*bottom: 0;*/
 }
 
 
@@ -110,7 +118,6 @@ h3 {
 	height: .7rem;
 	width: 9rem;
 	background-color:#ffec00;
-
 	margin-top: 4rem;
 }
 
@@ -184,6 +191,15 @@ h2 {
 	margin-bottom: 2.5rem;
 }
 
+// This applies from 0px to 600px
+@media (max-width: 600px) {
+  .base-column {
+  	/*max-width: 600px;*/
+  	max-width: 400px;
+    margin: 5px;
+  }
+}
+
 
 
 .legendCategory {
@@ -194,6 +210,15 @@ h2 {
   font-size: 14px;
 }
 
+.warning {
+  font-weight: bold;
+  background:#ebebeb;
+  stroke-width: 2px;
+  stroke: grey;
+  padding: 8px;
+	text-align: center;
+}
+
 rect {
   stroke-width: 2px;
   stroke: white;
@@ -202,9 +227,9 @@ rect {
 /* footer style */
 
 .wide {
-    background:#ebebeb;
-    width: 100%;
-    height: auto;
+  background:#ebebeb;
+  width: 100%;
+  height: auto;
 }
 
 /* tooltip style */
@@ -218,6 +243,11 @@ rect {
 	border: 1px solid grey;
 	padding: 8px;
 	text-align: center;
+}
+
+.tooltipHead {
+  font-weight: bold;
+  font-size: 14px;
 }
 
 

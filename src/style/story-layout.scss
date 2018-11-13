@@ -9,6 +9,10 @@ svg {
   background:url(../img/wave6.png) repeat;
 }
 
+#chart-2-people {
+  background-color: #f2f2f2;
+}
+
 canvas {
   position : absolute;
 }
@@ -25,7 +29,7 @@ canvas {
 
 .scrolly article {
   padding: 0;
-  max-width: 30rem;
+  max-width: 32rem;
   margin: 0 auto;
   position: relative;
   /* pointer-events: none; */
@@ -40,6 +44,7 @@ canvas {
   margin-bottom: 1rem;
 	width: 30vh;
 	margin: auto;
+
 }
 
 .scrolly article .step:last-of-type {
@@ -52,7 +57,7 @@ canvas {
 	border-radius: 2px;
   box-shadow: 2px 2px 2px 2px #e6e6e6;
   text-align: center;
-
+  line-height: 1.5;
   background-color: white;
   color: black;
 }

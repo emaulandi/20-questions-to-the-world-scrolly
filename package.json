@@ -10,6 +10,7 @@
     "updateGoogle": "node src/requestGoogle.js",
     "compileHbs": "node src/compileHbs.js",
     "build": "npm run updateGoogle && npm run compileHbs && webpack --config webpack.config.js --mode development",
+    "buildOffline": "npm run compileHbs && webpack --config webpack.config.js --mode development",
     "start": "webpack-serve",
     "start:dev": "webpack-dev-server",
     "deploy": "npm run build&&gh-pages -d dist"

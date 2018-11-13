@@ -7,6 +7,7 @@
 	<!--
 	<script type="text/javascript" src="dist/bundle.js"></script>
 	-->
+
 </head>
 
 <body>
@@ -20,6 +21,10 @@
 				<!--
 				 <p>	{{ intro }} </p>
 				-->
+
+				<p class="warning"> Best on computer screen with latest version of Chrome / Firefox </p>
+
+				<br>
 
 				{{#each intro}}
 					<p>{{value}}</p>
@@ -128,6 +133,14 @@
 			<div class="base-column text-column">
 
 				{{#each part2outro}}
+					<p>{{value}}</p>
+				{{/each}}
+
+
+				<div class="before-subtile"></div>
+				<h2> {{ part3title }} </h2>
+
+				{{#each part3paragraph}}
 					<p>{{value}}</p>
 				{{/each}}
 
